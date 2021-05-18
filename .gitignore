@@ -1,0 +1,5 @@
+.anjuta_sym_db.db
+*.anjuta
+*~
+src/*~
+

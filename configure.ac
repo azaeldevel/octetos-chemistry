@@ -1,6 +1,6 @@
 
 
-AC_INIT(octetos_chimestry, 0.1.0,azael.devel@gmail.com)
+AC_INIT(octetos-chimestry, 0.1.0,azael.devel@gmail.com)
 
 AC_CONFIG_HEADERS([config.h])
 

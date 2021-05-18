@@ -18,10 +18,16 @@
  */
 
 #include <iostream>
+#include "atoms.hh"
+
+
 
 int main()
 {
-	std::cout << "Hello world!" << std::endl;
+	oct::chemistry::Atom atom(oct::chemistry::H);
+	
+	std::cout << "Hidrogeno : " << oct::chemistry::H << "\n";
+	
 	return 0;
 }
 

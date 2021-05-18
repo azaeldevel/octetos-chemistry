@@ -9,13 +9,13 @@ AM_CFLAGS =\
 	 -Wall\
 	 -g
 
-bin_PROGRAMS = octetos_chimestry
+noinst_PROGRAMS = develop
 
-octetos_chimestry_SOURCES = \
-	main.cc
+develop_SOURCES = \
+	main.cc atoms.cc
 
-octetos_chimestry_LDFLAGS = 
+develop_LDFLAGS = 
 
-octetos_chimestry_LDADD = 
+develop_LDADD = 
 
 

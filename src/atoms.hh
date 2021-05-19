@@ -118,7 +118,7 @@ enum Symbol
 	Md,
 	No
 };
-enum Orbital
+enum Suborbital
 {
 	s,
 	p,
@@ -126,12 +126,17 @@ enum Orbital
 	f
 };
 
-struct QuantumNumber
+struct Orbital
 {
 	unsigned short main;
-	Orbital orbital;//tipode orbital
+	Suborbital orbital;//tipode orbital
 	unsigned short amount;//electrones en el orbital
-	
+};
+
+struct QuantumNumber : std::vector<Orbital>
+{
+
+	operator std::string() const;
 };
 
 class Atom
@@ -144,13 +149,13 @@ public:
 	Symbol getSymbol()const;
 	const char* getName(Symbol);
 	const char* getStringSymbol(Symbol);
-	const std::vector<QuantumNumber>& getQuantumNumber();
+	const QuantumNumber& getQuantumNumber();
 	
 	static AtomicNumber genAtomicNumber(Symbol);
 	static Symbol genSymbol(AtomicNumber);
 	static const char* genName(Symbol);
 	static const char* genStringSymbol(Symbol);
-	static bool genOrbitals(Symbol,std::vector<QuantumNumber>&);
+	static bool genQuantumNumber(Symbol,QuantumNumber&);
 
 private:
 	//pameter load
@@ -159,7 +164,7 @@ private:
 	const char* name;
 	const char* strSymbol;
 	//demand load
-	std::vector<QuantumNumber> qnumber;
+	QuantumNumber qnumber;
 };
 
 }

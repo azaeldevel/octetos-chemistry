@@ -23,10 +23,18 @@
 
 
 int main()
-{
-	oct::chem::Atom atom(oct::chem::H);
+{	
+	oct::chem::Atom H(oct::chem::H);
 	
-	std::cout << "Hidrogeno : " << oct::chem::H << "\n";
+	oct::chem::Atom O(oct::chem::O);
+	
+	oct::chem::Atom Fe(oct::chem::Fe);
+	const oct::chem::QuantumNumber& qnFe = Fe.getQuantumNumber();
+	std::string strQnFe = (std::string)qnFe;
+	std::cout << "size : " << qnFe.size() << "\n";
+	std::cout << "Fe : " << strQnFe << "\n";
+	
+	oct::chem::Atom Cr(oct::chem::Cr);
 	
 	return 0;
 }

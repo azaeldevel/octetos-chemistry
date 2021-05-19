@@ -4,7 +4,7 @@ AC_INIT(octetos-chimestry, 0.1.0,azael.devel@gmail.com)
 
 AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE([1.11])
+AM_INIT_AUTOMAKE([1.11 gnu subdir-objects])
 
 AM_SILENT_RULES([yes])
 

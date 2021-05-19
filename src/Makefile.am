@@ -12,7 +12,7 @@ AM_CFLAGS =\
 noinst_PROGRAMS = develop
 
 develop_SOURCES = \
-	main.cc atoms.cc
+	main.cc atoms.cc gen/orbital.cc
 
 develop_LDFLAGS = 
 

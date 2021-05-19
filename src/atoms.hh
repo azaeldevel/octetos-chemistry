@@ -8,7 +8,7 @@
 
 
 
-namespace oct::chemistry
+namespace oct::chem
 {
 
 typedef unsigned short AtomicNumber;
@@ -100,21 +100,38 @@ enum Symbol
 	Bi,
 	Po,
 	At,
-	Rn
+	Rn,
+	Fr,
+	Ra,
+	Ac,
+	Th,
+	Pa,
+	U,
+	Np,
+	Pu,
+	Am,
+	Cm,
+	Bk,
+	Cf,
+	Es,
+	Fm,
+	Md,
+	No
 };
-enum Sublevel
+enum Orbital
 {
 	s,
 	p,
 	d,
-	f,
-	g,
-	h
+	f
 };
-struct LevelAtomic
+
+struct QuantumNumber
 {
-	Sublevel sublevel;
-	unsigned short numer;
+	unsigned short main;
+	Orbital orbital;//tipode orbital
+	unsigned short amount;//electrones en el orbital
+	
 };
 
 class Atom
@@ -127,29 +144,22 @@ public:
 	Symbol getSymbol()const;
 	const char* getName(Symbol);
 	const char* getStringSymbol(Symbol);
-	const std::vector<LevelAtomic>& getorbital();
+	const std::vector<QuantumNumber>& getQuantumNumber();
 	
-	//numeros cuanticos
-	unsigned short getN()const;
-	void* getL()const;
-	float getS()const;
-
 	static AtomicNumber genAtomicNumber(Symbol);
 	static Symbol genSymbol(AtomicNumber);
 	static const char* genName(Symbol);
 	static const char* genStringSymbol(Symbol);
-	static bool genOrbitals(std::vector<LevelAtomic>&);
+	static bool genOrbitals(Symbol,std::vector<QuantumNumber>&);
 
 private:
 	//pameter load
 	Symbol symbol;
-	AtomicNumber atomicnumber;
 	//automict load	
 	const char* name;
 	const char* strSymbol;
-	LevelAtomic lastOrbital;
 	//demand load
-	std::vector<LevelAtomic> orbitals;
+	std::vector<QuantumNumber> qnumber;
 };
 
 }

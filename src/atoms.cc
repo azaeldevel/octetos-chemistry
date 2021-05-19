@@ -1,7 +1,7 @@
 
 #include "atoms.hh"
 
-namespace oct::chemistry
+namespace oct::chem
 {
 
 
@@ -9,7 +9,7 @@ Atom::Atom(Symbol s) : symbol(s)
 {
 
 }
-Atom::Atom(AtomicNumber n) : atomicnumber(n)
+Atom::Atom(AtomicNumber n) : symbol((Symbol)n)
 {
 
 }

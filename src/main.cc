@@ -24,9 +24,9 @@
 
 int main()
 {
-	oct::chemistry::Atom atom(oct::chemistry::H);
+	oct::chem::Atom atom(oct::chem::H);
 	
-	std::cout << "Hidrogeno : " << oct::chemistry::H << "\n";
+	std::cout << "Hidrogeno : " << oct::chem::H << "\n";
 	
 	return 0;
 }

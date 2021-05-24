@@ -152,9 +152,9 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
 		break;
 	case Symbol::Al:
 		q.resize(5);
@@ -169,12 +169,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 1;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 1;
 		break;
 	case Symbol::Si:
 		q.resize(5);
@@ -209,12 +209,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 3;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 3;
 		break;
 	case Symbol::S:
 		q.resize(5);
@@ -249,12 +249,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 5;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 5;
 		break;
 	case Symbol::Ar:
 		q.resize(5);
@@ -269,12 +269,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		break;
 		
 		
@@ -291,12 +291,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::s;
@@ -315,12 +315,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::s;
@@ -339,12 +339,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -366,12 +366,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -420,12 +420,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -447,12 +447,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -474,12 +474,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -501,12 +501,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -528,12 +528,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -555,12 +555,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -582,12 +582,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -609,12 +609,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -639,12 +639,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -669,12 +669,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -699,12 +699,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -729,12 +729,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -759,12 +759,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -790,12 +790,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -824,12 +824,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -858,12 +858,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;
@@ -895,12 +895,12 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		q[1].orbital = Suborbital::p;
 		q[1].amount = 6;
 		//Ne
-		q[3].main = 3;
-		q[3].orbital = Suborbital::s;
-		q[3].amount = 2;
-		q[4].main = 3;
-		q[4].orbital = Suborbital::p;
-		q[4].amount = 6;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::s;
+		q[2].amount = 2;
+		q[2].main = 3;
+		q[2].orbital = Suborbital::p;
+		q[2].amount = 6;
 		//Ar
 		q[5].main = 4;
 		q[5].orbital = Suborbital::d;

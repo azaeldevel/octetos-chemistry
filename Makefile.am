@@ -1,5 +1,5 @@
 
-SUBDIRS = src tests
+SUBDIRS = src 
 
 if WITH_TESTS
 SUBDIRS +=  tests

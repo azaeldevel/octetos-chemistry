@@ -69,7 +69,14 @@ Atom::Atom(AtomicNumber n) : symbol((Symbol)n)
 	genQuantumNumber(symbol, qnumber);
 }
 
-
+AtomicNumber Atom::getAtomicNumber()const
+{
+	return symbol;
+}
+Symbol Atom::getSymbol()const
+{
+	return symbol;
+}
 const QuantumNumber& Atom::getQuantumNumber()
 {
 	return qnumber;

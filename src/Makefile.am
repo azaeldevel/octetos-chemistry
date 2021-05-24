@@ -9,13 +9,10 @@ AM_CFLAGS =\
 	 -Wall\
 	 -g
 
-noinst_PROGRAMS = develop
 
-develop_SOURCES = \
-	main.cc atoms.cc gen/orbital.cc
-
-develop_LDFLAGS = 
-
-develop_LDADD = 
+lib_LTLIBRARIES = liboctetos-chemistry.la
 
 
+liboctetos_chemistry_la_CXXFLAGS = 
+liboctetos_chemistry_la_LIBADD =  
+liboctetos_chemistry_la_SOURCES = atom.cc gen/orbital.cc

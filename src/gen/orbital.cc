@@ -1,6 +1,6 @@
 
 
-#include "../atoms.hh"
+#include "../atom.hh"
 
 namespace oct::chem
 {

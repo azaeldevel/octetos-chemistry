@@ -1,5 +1,9 @@
 
-#include "atoms.hh"
+//Debug
+#include <iostream>
+
+
+#include "atom.hh"
 
 namespace oct::chem
 {
@@ -11,6 +15,7 @@ QuantumNumber::operator std::string() const
 	
 	for(unsigned short i = 0; i < size(); i++)
 	{
+		//std::cout << i << "\n";
 		str += std::to_string(at(i).main);
 		switch(at(i).orbital)
 		{
@@ -28,7 +33,7 @@ QuantumNumber::operator std::string() const
 			break;
 		}
 		str += std::to_string(at(i).amount);
-		str = " ";
+		str += " ";
 	}
 	
 	return str;

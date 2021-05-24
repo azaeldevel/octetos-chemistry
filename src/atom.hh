@@ -135,7 +135,6 @@ struct Orbital
 
 struct QuantumNumber : std::vector<Orbital>
 {
-
 	operator std::string() const;
 };
 

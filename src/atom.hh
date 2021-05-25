@@ -130,7 +130,7 @@ struct Orbital
 {
 	unsigned short main;
 	Suborbital orbital;//tipode orbital
-	unsigned short amount;//electrones en el orbital
+	unsigned short electron;//electrones en el orbital
 };
 
 struct QuantumNumber : std::vector<Orbital>

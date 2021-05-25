@@ -30,10 +30,39 @@ void testDeveloping()
 	CU_ASSERT(H.getSymbol() == H.getAtomicNumber());//El numero atomico es el symbolo
 	CU_ASSERT(H.getSymbol() == 1);// H tiene este numero atomico
 	
+	oct::chem::Atom He(oct::chem::He);
+	CU_ASSERT(H.getSymbol() == H.getAtomicNumber());//El numero atomico es el symbolo
+	CU_ASSERT(H.getSymbol() == 1);// H tiene este numero atomico
+	const oct::chem::QuantumNumber& qnHe = He.getQuantumNumber();
+	std::string strQnHe = (std::string)qnHe;
+	CU_ASSERT(qnHe.size() == 1);
+	CU_ASSERT(qnHe[0].main == 1);
+	CU_ASSERT(qnHe[0].orbital == oct::chem::Suborbital::s);
+	CU_ASSERT(qnHe[0].electron == 2);
+	//std::cout << "He : " << strQnHe << "\n";
+		
 	oct::chem::Atom O(oct::chem::O);
 	CU_ASSERT(O.getSymbol() == O.getAtomicNumber());//El numero atomico es el symbolo
 	CU_ASSERT(O.getSymbol() == 8);//O tiene este numero atomico
-		
+	const oct::chem::QuantumNumber& qnO = O.getQuantumNumber();
+	std::string strQnO = (std::string)qnO;
+	CU_ASSERT(qnO.size() == 3);
+	CU_ASSERT(qnO[2].main == 2);
+	CU_ASSERT(qnO[2].orbital == oct::chem::Suborbital::p);
+	CU_ASSERT(qnO[2].electron == 4);
+	//std::cout << "O : " << strQnO << "\n";
+	
+	oct::chem::Atom Ne(oct::chem::Ne);
+	CU_ASSERT(Ne.getSymbol() == Ne.getAtomicNumber());//El numero atomico es el symbolo
+	CU_ASSERT(Ne.getSymbol() == 10);//O tiene este numero atomico
+	const oct::chem::QuantumNumber& qnNe = Ne.getQuantumNumber();
+	std::string strQnNe = (std::string)qnO;	
+	CU_ASSERT(qnNe.size() == 3);
+	CU_ASSERT(qnNe[2].main == 2);
+	CU_ASSERT(qnNe[2].orbital == oct::chem::Suborbital::p);
+	CU_ASSERT(qnNe[2].electron == 6);
+	//std::cout << "Ne : " << strQnNe << "\n";
+	
 	oct::chem::Atom Cr(oct::chem::Cr);
 	CU_ASSERT(Cr.getSymbol() == Cr.getAtomicNumber());//El numero atomico es el symbolo
 	CU_ASSERT(Cr.getSymbol() == 24);//Fe tiene este numero atomico

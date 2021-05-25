@@ -58,14 +58,17 @@ QuantumNumber::operator std::string() const
 
 
 
-
+Atom::Atom()
+{
+	symbol = Symbol::None;
+}
 Atom::Atom(Symbol s) : symbol(s)
 {
-	genQuantumNumber(symbol, qnumber);
+	
 }
 Atom::Atom(AtomicNumber n) : symbol((Symbol)n)
 {
-	genQuantumNumber(symbol, qnumber);
+	
 }
 
 AtomicNumber Atom::getAtomicNumber()const
@@ -78,7 +81,17 @@ Symbol Atom::getSymbol()const
 }
 const QuantumNumber& Atom::getQuantumNumber()
 {
+	//generar si no existe
+	if(qnumber.size() == 0) genQuantumNumber(symbol, qnumber);
 	return qnumber;
+}
+void Atom::set(Symbol s)
+{
+	symbol = s;
+}
+void Atom::set(AtomicNumber a)
+{
+	symbol = Symbol(a);
 }
 
 }

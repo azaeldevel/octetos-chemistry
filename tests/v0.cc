@@ -26,6 +26,41 @@
 
 void testDeveloping()
 {	
+	oct::chem::Atom atoms[87];
+	
+	for(unsigned short i = 1; i < 87; i++)
+	{
+		CU_ASSERT(atoms[i].getSymbol() == oct::chem::Symbol::None);
+		const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
+		CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
+	}
+	for(unsigned short i = 1; i < 87; i++)
+	{
+		atoms[i].set(i);	
+		CU_ASSERT(atoms[i].getSymbol() == atoms[i].getAtomicNumber()); //el numero atomico es equivalenmte a la enumeriacion
+		const oct::chem::QuantumNumber& qnA = atoms[i].getQuantumNumber();
+		unsigned short qnCountE = 0;
+		for(const oct::chem::Orbital& o : qnA)
+		{
+			qnCountE += o.electron;
+		}		
+		if(qnCountE == atoms[i].getAtomicNumber())//la cantidad de electrones en el numero atomico es igual al numero atomico
+		{
+			CU_ASSERT(true);
+		}
+		else
+		{
+			std::cout << "n " << atoms[i].getAtomicNumber() << "\n";
+			std::cout << "e " << qnCountE << "\n";
+			std::string strQnA = (std::string)qnA;
+			std::cout << "number : " << strQnA << "\n";
+			CU_ASSERT(false);
+		}
+		
+		
+	}
+	
+	
 	oct::chem::Atom H(oct::chem::H);
 	CU_ASSERT(H.getSymbol() == H.getAtomicNumber());//El numero atomico es el symbolo
 	CU_ASSERT(H.getSymbol() == 1);// H tiene este numero atomico

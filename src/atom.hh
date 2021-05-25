@@ -12,6 +12,7 @@ namespace oct::chem
 {
 
 typedef unsigned short AtomicNumber;
+
 enum Symbol
 {
 	None,
@@ -141,6 +142,7 @@ struct QuantumNumber : std::vector<Orbital>
 class Atom
 {
 public:
+	Atom();
 	Atom(Symbol);
 	Atom(AtomicNumber);
 
@@ -149,6 +151,9 @@ public:
 	const char* getName(Symbol);
 	const char* getStringSymbol(Symbol);
 	const QuantumNumber& getQuantumNumber();
+
+	void set(Symbol);
+	void set(AtomicNumber);
 	
 	static AtomicNumber genAtomicNumber(Symbol);
 	static Symbol genSymbol(AtomicNumber);

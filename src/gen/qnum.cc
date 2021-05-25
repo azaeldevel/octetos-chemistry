@@ -31,6 +31,12 @@ void genQuantumNumber_Mg(Symbol s, QuantumNumber& q)
 	q[3].orbital = Suborbital::s;
 	q[3].electron = 2;
 }
+void genQuantumNumber_Ar(Symbol s, QuantumNumber& q)
+{
+	q[4].main = 3;
+	q[4].orbital = Suborbital::p;
+	q[4].electron = 6;
+}
 bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 {
 	switch(s)
@@ -128,33 +134,33 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		genQuantumNumber_Be(s,q);
 		genQuantumNumber_Ne(s,q);
 		genQuantumNumber_Mg(s,q);
-		q[3].main = 3;
-		q[3].orbital = Suborbital::p;
-		q[3].electron = 1;
+		q[4].main = 3;
+		q[4].orbital = Suborbital::p;
+		q[4].electron = 1;
 		break;
 	case Symbol::Si:
 		q.resize(5);
 		genQuantumNumber_He(s,q);
 		genQuantumNumber_Be(s,q);
 		genQuantumNumber_Ne(s,q);
-		q[3].main = 2;
+		q[3].main = 3;
 		q[3].orbital = Suborbital::s;
 		q[3].electron = 1;
-		q[3].main = 3;
-		q[3].orbital = Suborbital::p;
-		q[3].electron = 3;
+		q[4].main = 3;
+		q[4].orbital = Suborbital::p;
+		q[4].electron = 3;
 		break;
 	case Symbol::P:
 		q.resize(5);
 		genQuantumNumber_He(s,q);
 		genQuantumNumber_Be(s,q);
 		genQuantumNumber_Ne(s,q);
-		q[3].main = 2;
+		q[3].main = 3;
 		q[3].orbital = Suborbital::s;
 		q[3].electron = 2;
-		q[3].main = 3;
-		q[3].orbital = Suborbital::p;
-		q[3].electron = 2;
+		q[4].main = 3;
+		q[4].orbital = Suborbital::p;
+		q[4].electron = 3;
 		break;
 	case Symbol::S:
 		q.resize(5);
@@ -162,9 +168,27 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		genQuantumNumber_Be(s,q);
 		genQuantumNumber_Ne(s,q);
 		genQuantumNumber_Mg(s,q);
-		q[3].main = 3;
-		q[3].orbital = Suborbital::p;
-		q[3].electron = 4;
+		q[4].main = 3;
+		q[4].orbital = Suborbital::p;
+		q[4].electron = 4;
+		break;
+	case Symbol::Cl:
+		q.resize(5);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		q[4].main = 3;
+		q[4].orbital = Suborbital::p;
+		q[4].electron = 5;
+		break;
+	case Symbol::Ar:
+		q.resize(5);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);
 		break;
 	}
 	

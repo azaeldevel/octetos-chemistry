@@ -62,6 +62,18 @@ void genQuantumNumber_Sr(Symbol s, QuantumNumber& q)
 	q[8].orbital = Suborbital::s;
 	q[8].electron = 2;
 }
+void genQuantumNumber_Cd(Symbol s, QuantumNumber& q)
+{
+	q[9].main = 5;
+	q[9].orbital = Suborbital::d;
+	q[9].electron = 10;
+}
+void genQuantumNumber_Xe(Symbol s, QuantumNumber& q)
+{
+	q[10].main = 5;
+	q[10].orbital = Suborbital::p;
+	q[10].electron = 6;
+}
 bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 {
 	switch(s)
@@ -503,8 +515,8 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		genQuantumNumber_Kr(s,q);
 		q[8].main = 5;
 		q[8].orbital = Suborbital::s;
-		q[8].electron = 4;
-		q[9].main = 1;
+		q[8].electron = 1;
+		q[9].main = 5;
 		q[9].orbital = Suborbital::d;
 		q[9].electron = 4;
 		break;
@@ -520,8 +532,8 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		genQuantumNumber_Kr(s,q);
 		q[8].main = 5;
 		q[8].orbital = Suborbital::s;
-		q[8].electron = 4;
-		q[9].main = 1;
+		q[8].electron = 1;
+		q[9].main = 5;
 		q[9].orbital = Suborbital::d;
 		q[9].electron = 5;
 		break;
@@ -536,10 +548,184 @@ bool Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 		genQuantumNumber_Zn(s,q);
 		genQuantumNumber_Kr(s,q);
 		genQuantumNumber_Sr(s,q);
-		q[9].main = 1;
+		q[9].main = 5;
 		q[9].orbital = Suborbital::d;
 		q[9].electron = 5;
 		break;
+	case Symbol::Ru:
+		q.resize(10);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		q[8].main = 5;
+		q[8].orbital = Suborbital::s;
+		q[8].electron = 1;
+		q[9].main = 5;
+		q[9].orbital = Suborbital::d;
+		q[9].electron = 7;
+		break;
+	case Symbol::Rh:
+		q.resize(10);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		q[8].main = 5;
+		q[8].orbital = Suborbital::s;
+		q[8].electron = 1;
+		q[9].main = 5;
+		q[9].orbital = Suborbital::d;
+		q[9].electron = 8;
+		break;
+	case Symbol::Pd:
+		q.resize(9);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);	
+		q[8].main = 5;
+		q[8].orbital = Suborbital::d;
+		q[8].electron = 10;
+		break;
+	case Symbol::Ag:
+		q.resize(10);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		q[8].main = 5;
+		q[8].orbital = Suborbital::s;
+		q[8].electron = 1;
+		q[9].main = 5;
+		q[9].orbital = Suborbital::d;
+		q[9].electron = 10;
+		break;
+	case Symbol::Cd:
+		q.resize(10);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		genQuantumNumber_Sr(s,q);
+		genQuantumNumber_Cd(s,q);
+		break;
+	case Symbol::In:
+		q.resize(11);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		genQuantumNumber_Sr(s,q);
+		genQuantumNumber_Cd(s,q);
+		q[10].main = 5;
+		q[10].orbital = Suborbital::p;
+		q[10].electron = 1;
+		break;
+	case Symbol::Sn:
+		q.resize(11);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		genQuantumNumber_Sr(s,q);
+		genQuantumNumber_Cd(s,q);
+		q[10].main = 5;
+		q[10].orbital = Suborbital::p;
+		q[10].electron = 2;
+		break;
+	case Symbol::Sb:
+		q.resize(11);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		genQuantumNumber_Sr(s,q);
+		genQuantumNumber_Cd(s,q);
+		q[10].main = 5;
+		q[10].orbital = Suborbital::p;
+		q[10].electron = 3;
+		break;
+	case Symbol::Te:
+		q.resize(11);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		genQuantumNumber_Sr(s,q);
+		genQuantumNumber_Cd(s,q);
+		q[10].main = 5;
+		q[10].orbital = Suborbital::p;
+		q[10].electron = 4;
+		break;
+	case Symbol::I:
+		q.resize(11);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		genQuantumNumber_Sr(s,q);
+		genQuantumNumber_Cd(s,q);
+		q[10].main = 5;
+		q[10].orbital = Suborbital::p;
+		q[10].electron = 5;
+		break;
+	case Symbol::Xe:
+		q.resize(11);
+		genQuantumNumber_He(s,q);
+		genQuantumNumber_Be(s,q);
+		genQuantumNumber_Ne(s,q);
+		genQuantumNumber_Mg(s,q);
+		genQuantumNumber_Ar(s,q);		
+		genQuantumNumber_Ca(s,q);		
+		genQuantumNumber_Zn(s,q);
+		genQuantumNumber_Kr(s,q);		
+		genQuantumNumber_Sr(s,q);
+		genQuantumNumber_Cd(s,q);
+		genQuantumNumber_Xe(s,q);
+		break;
+		
+		
 	}
 	
 	return true;

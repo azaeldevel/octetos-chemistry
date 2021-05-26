@@ -99,4 +99,12 @@ void Atom::set(AtomicNumber a)
 	symbol = Symbol(a);
 }
 
+bool Atom::isMetal()const
+{
+	return genIsMetal(symbol);
+}
+bool Atom::isNoMetal()const
+{
+	return genIsNoMetal(symbol);
+}
 }

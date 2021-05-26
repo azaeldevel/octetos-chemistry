@@ -170,12 +170,15 @@ public:
 
 	void set(Symbol);
 	void set(AtomicNumber);
+
+	bool isMetal()const;
+	bool isNoMetal()const;
 	
-	static AtomicNumber genAtomicNumber(Symbol);
-	static Symbol genSymbol(AtomicNumber);
 	static const char* genNames(Symbol);
 	static const char* genStrSymbol(Symbol);
 	static void genQuantumNumber(Symbol,QuantumNumber&);
+	static bool genIsMetal(Symbol);
+	static bool genIsNoMetal(Symbol);
 
 private:
 	//pameter load

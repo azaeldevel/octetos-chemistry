@@ -117,7 +117,23 @@ enum Symbol
 	Es,
 	Fm,
 	Md,
-	No
+	No,
+	Lr,
+	Rf,
+	Db,
+	Sg,
+	Bh,
+	Hs,
+	Mt,
+	Ds,
+	Rg,
+	Cn,
+	Nh,
+	Fl,
+	Mc,
+	Lv,
+	Ts,
+	Og
 };
 enum Suborbital
 {
@@ -159,7 +175,7 @@ public:
 	static Symbol genSymbol(AtomicNumber);
 	static const char* genName(Symbol);
 	static const char* genStringSymbol(Symbol);
-	static bool genQuantumNumber(Symbol,QuantumNumber&);
+	static void genQuantumNumber(Symbol,QuantumNumber&);
 
 private:
 	//pameter load

@@ -26,7 +26,7 @@
 
 void testDeveloping()
 {	
-	unsigned short MAXNUMATOM = 102;
+	unsigned short MAXNUMATOM = 118;
 	oct::chem::Atom atoms[MAXNUMATOM];
 	
 	for(unsigned short i = 1; i < MAXNUMATOM; i++)

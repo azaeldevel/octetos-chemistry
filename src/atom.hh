@@ -174,14 +174,12 @@ public:
 	static AtomicNumber genAtomicNumber(Symbol);
 	static Symbol genSymbol(AtomicNumber);
 	static const char* genNames(Symbol);
-	static const char* genStringSymbol(Symbol);
+	static const char* genStrSymbol(Symbol);
 	static void genQuantumNumber(Symbol,QuantumNumber&);
 
 private:
 	//pameter load
 	Symbol symbol;
-	//automict load	
-	const char* strSymbol;
 	//demand load
 	QuantumNumber qnumber;
 };

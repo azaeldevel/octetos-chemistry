@@ -5,7 +5,7 @@
 
 namespace oct::chem
 {
-const char* Atom::genNames(Symbol s)
+const char* Atom::genStrSymbol(Symbol s)
 {
 	switch(s)
 	{
@@ -13,81 +13,81 @@ const char* Atom::genNames(Symbol s)
 		return NULL;
 		break;
 	case Symbol::H:
-		return "Hidrogeno";
+		return "H";
 	case Symbol::He:
-		return "Helio";
+		return "He";
 	case Symbol::Li:
-		return "Litio";
+		return "Li";
 	case Symbol::Be:
-		return "Berilio";
+		return "Be";
 	case Symbol::B:
-		return "Boro";
+		return "B";
 	case Symbol::C:
-		return "Carbono";
+		return "C";
 	case Symbol::N:
-		return "Nitrogeno";
+		return "N";
 	case Symbol::O:
-		return "Oxigeno";
+		return "O";
 	case Symbol::F:
-		return "Fluor";
+		return "F";
 	case Symbol::Ne:
-		return "Neon";
+		return "Ne";
 		
 	case Symbol::Na:
-		return "Sodio";
+		return "Na";
 	case Symbol::Mg:
-		return "Magnesio";
+		return "Mg";
 		
 		
 	case Symbol::Al:
-		return "Aluminio";
+		return "Al";
 	case Symbol::Si:
-		return "Silicio";
+		return "Si";
 	case Symbol::P:
-		return "Fosforo";
+		return "P";
 	case Symbol::S:
-		return "Azifre";
+		return "S";
 	case Symbol::Cl:
-		return "Cloro";
+		return "Cl";
 	case Symbol::Ar:
-		return "Argon";
+		return "Ar";
 		
 	case Symbol::K:
-		return "Potasio";
+		return "K";
 	case Symbol::Ca:
-		return "Calcio";
+		return "Ca";
 	case Symbol::Sc:
-		return "Escandio";
+		return "Sc";
 	case Symbol::Ti:
-		return "Titanio";
+		return "Ti";
 	case Symbol::V:
-		return "Vanadio";
+		return "V";
 	case Symbol::Cr:
-		return "Cromo";
+		return "Cr";
 	case Symbol::Mn:
-		return "Magnesio";
+		return "Mn";
 	case Symbol::Fe:
-		return "Hierro";
+		return "Fe";
 	case Symbol::Co:
-		return "Cobalto";
+		return "Co";
 	case Symbol::Ni:
-		return "Niquel";
+		return "Ni";
 	case Symbol::Cu:
-		return "Cobre";
+		return "Cu";
 	case Symbol::Zn:
-		return "Zinc";
+		return "Zn";
 	case Symbol::Ga:
-		return "Galio";
+		return "Ga";
 	case Symbol::Ge:
-		return "Germanio";
+		return "Ge";
 	case Symbol::As:
-		return "Arsenico";
+		return "As";
 	case Symbol::Se:
-		return "Selenio";
+		return "Se";
 	case Symbol::Br:
-		return "Bromo";
+		return "Br";
 	case Symbol::Kr:
-		return "Kripton";
+		return "Kr";
 		
 	case Symbol::Rb:
 		return "";

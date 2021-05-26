@@ -101,6 +101,8 @@ void Atom::genQuantumNumber(Symbol s, QuantumNumber& q)
 {
 	switch(s)
 	{
+	case 0:
+		break;
 	case Symbol::H:
 		q.resize(1);
 		q[0].main = 1;

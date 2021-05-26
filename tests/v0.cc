@@ -35,7 +35,7 @@ void testDeveloping()
 		const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
 		CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
 	}
-	for(unsigned short i = 1; i < MAXNUMATOM; i++)
+	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
 	{
 		atoms[i].set(i);	
 		CU_ASSERT(atoms[i].getSymbol() == atoms[i].getAtomicNumber()); //el numero atomico es equivalenmte a la enumeriacion

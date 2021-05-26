@@ -181,7 +181,6 @@ private:
 	//pameter load
 	Symbol symbol;
 	//automict load	
-	const char* name;
 	const char* strSymbol;
 	//demand load
 	QuantumNumber qnumber;

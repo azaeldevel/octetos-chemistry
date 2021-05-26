@@ -173,7 +173,7 @@ public:
 	
 	static AtomicNumber genAtomicNumber(Symbol);
 	static Symbol genSymbol(AtomicNumber);
-	static const char* genName(Symbol);
+	static const char* genNames(Symbol);
 	static const char* genStringSymbol(Symbol);
 	static void genQuantumNumber(Symbol,QuantumNumber&);
 

@@ -85,6 +85,11 @@ const QuantumNumber& Atom::getQuantumNumber()
 	if(qnumber.size() == 0) genQuantumNumber(symbol, qnumber);
 	return qnumber;
 }
+const char* Atom::getName(Symbol s)
+{
+	if(s < Symbol::Kr) return genNames(s);
+	else return NULL;
+}
 void Atom::set(Symbol s)
 {
 	symbol = s;

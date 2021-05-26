@@ -1,7 +1,7 @@
 
 //Debug
 #include <iostream>
-
+#include <octetos/core/Error.hh>
 
 #include "atom.hh"
 
@@ -85,11 +85,37 @@ const QuantumNumber& Atom::getQuantumNumber()
 	if(qnumber.size() == 0) genQuantumNumber(symbol, qnumber);
 	return qnumber;
 }
-const char* Atom::getName(Symbol s)
+const char* Atom::getName()const
 {
-	if(s < Symbol::Kr) return genNames(s);
+	if(symbol < Symbol::Kr) return genNames(symbol);
 	else return NULL;
 }
+const char* Atom::getStringSymbol()const
+{
+	if(symbol < Symbol::Kr) return genStrSymbol(symbol);
+	else return NULL;
+}
+unsigned short Atom::getElectronValencia()const
+{
+	if(qnumber.size() > 0)
+	{
+		unsigned short main = qnumber.back().main;
+		unsigned short counte = 0;
+		for(unsigned short i = qnumber.size() - 1; i > 0; i--)
+		{
+			if(qnumber[i].main == main) counte += qnumber[i].electron;
+		}
+		if(isMetal()) return counte;
+		else if(isNoMetal()) 
+		{
+			if(symbol == Symbol::H or symbol == Symbol::He) return 2 - counte;
+			else return 8 - counte;
+		}
+	}
+	
+	throw octetos::core::Exception("Numero cuantico no generado.",__FILE__,__LINE__);
+}
+
 void Atom::set(Symbol s)
 {
 	symbol = s;

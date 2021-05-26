@@ -20,7 +20,7 @@
 
 
 #include <iostream>
-#include <atom.hh>
+#include <Molecule.hh>
 
 
 
@@ -29,11 +29,12 @@ void testDeveloping()
 	unsigned short MAXNUMATOM = 118;
 	oct::chem::Atom atoms[MAXNUMATOM];
 	
-	
-	CU_ASSERT(atoms[0].getSymbol() == oct::chem::Symbol::None);
-	const oct::chem::QuantumNumber& qnATmp = atoms[0].getQuantumNumber();
-	CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
-	
+	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
+	{
+		CU_ASSERT(atoms[i].getSymbol() == oct::chem::Symbol::None);
+		const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
+		CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
+	}	
 	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
 	{
 		atoms[i].set(i);	
@@ -56,7 +57,20 @@ void testDeveloping()
 			std::cout << "number : " << strQnA << "\n";
 			CU_ASSERT(false);
 		}		
-	}	
+	}
+	
+	
+	unsigned short valenciaCl = atoms[oct::chem::Cl].getElectronValencia();
+	//std::cout << "Cl : " << valenciaCl << "\n";
+	CU_ASSERT(valenciaCl == 1);
+	
+	//oct::chem::Molecule NaCl(atoms[oct::chem::Na],atoms[oct::chem::Na]);
+	//std::cout << "Mg e : " << atoms[oct::chem::Mg].getElectronValencia() << "\n";
+	oct::chem::Molecule MgCl2(atoms[oct::chem::Mg],atoms[oct::chem::Cl]);
+	MgCl2.printFormuleText(std::cout);
+	
+	
+	
 }
 
 int init(void)

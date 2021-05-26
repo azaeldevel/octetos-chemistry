@@ -152,7 +152,7 @@ struct Orbital
 
 struct QuantumNumber : std::vector<Orbital>
 {
-	operator std::string() const;
+	operator std::string() const;	
 };
 
 class Atom
@@ -164,9 +164,10 @@ public:
 
 	AtomicNumber getAtomicNumber()const;
 	Symbol getSymbol()const;
-	const char* getName(Symbol);
-	const char* getStringSymbol(Symbol);
+	const char* getName()const;
+	const char* getStringSymbol()const;
 	const QuantumNumber& getQuantumNumber();
+	unsigned short getElectronValencia()const;
 
 	void set(Symbol);
 	void set(AtomicNumber);

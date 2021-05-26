@@ -30,8 +30,8 @@ void testDeveloping()
 	oct::chem::Atom atoms[MAXNUMATOM];
 	
 	
-	CU_ASSERT(atoms[1].getSymbol() == oct::chem::Symbol::None);
-	const oct::chem::QuantumNumber& qnATmp = atoms[1].getQuantumNumber();
+	CU_ASSERT(atoms[0].getSymbol() == oct::chem::Symbol::None);
+	const oct::chem::QuantumNumber& qnATmp = atoms[0].getQuantumNumber();
 	CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
 	
 	for(unsigned short i = 1; i <= MAXNUMATOM; i++)

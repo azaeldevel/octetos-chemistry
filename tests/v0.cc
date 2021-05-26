@@ -29,12 +29,11 @@ void testDeveloping()
 	unsigned short MAXNUMATOM = 118;
 	oct::chem::Atom atoms[MAXNUMATOM];
 	
-	for(unsigned short i = 1; i < MAXNUMATOM; i++)
-	{
-		CU_ASSERT(atoms[i].getSymbol() == oct::chem::Symbol::None);
-		const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
-		CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
-	}
+	
+	CU_ASSERT(atoms[1].getSymbol() == oct::chem::Symbol::None);
+	const oct::chem::QuantumNumber& qnATmp = atoms[1].getQuantumNumber();
+	CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
+	
 	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
 	{
 		atoms[i].set(i);	

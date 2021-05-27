@@ -143,6 +143,7 @@ enum Suborbital
 	f
 };
 
+AtomicNumber randNumber();
 struct Orbital
 {
 	unsigned short main;
@@ -174,12 +175,14 @@ public:
 
 	bool isMetal()const;
 	bool isNoMetal()const;
+	bool isGasNoble()const;
 	
 	static const char* genNames(Symbol);
 	static const char* genStrSymbol(Symbol);
 	static void genQuantumNumber(Symbol,QuantumNumber&);
 	static bool genIsMetal(Symbol);
 	static bool genIsNoMetal(Symbol);
+	static bool genIsGasNoble(Symbol);
 
 private:
 	//pameter load

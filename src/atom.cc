@@ -2,11 +2,34 @@
 //Debug
 #include <iostream>
 #include <octetos/core/Error.hh>
+#include <random>
+
 
 #include "atom.hh"
 
 namespace oct::chem
 {
+
+
+
+
+AtomicNumber randNumber()
+{
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_real_distribution<double> distr(1, 36);
+	
+	return distr(gen);
+}
+
+
+
+
+
+
+
+
+
 
 
 QuantumNumber::operator std::string() const
@@ -132,5 +155,9 @@ bool Atom::isMetal()const
 bool Atom::isNoMetal()const
 {
 	return genIsNoMetal(symbol);
+}
+bool Atom::isGasNoble()const
+{
+	return genIsGasNoble(symbol);
 }
 }

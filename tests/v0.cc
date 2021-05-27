@@ -18,7 +18,7 @@
  */
 #include <CUnit/Basic.h>
 
-
+#include <list>
 #include <iostream>
 #include <Molecule.hh>
 
@@ -58,19 +58,44 @@ void testDeveloping()
 			CU_ASSERT(false);
 		}		
 	}
-	
-	
+		
 	unsigned short valenciaCl = atoms[oct::chem::Cl].getElectronValencia();
-	//std::cout << "Cl : " << valenciaCl << "\n";
 	CU_ASSERT(valenciaCl == 1);
 	
-	//oct::chem::Molecule NaCl(atoms[oct::chem::Na],atoms[oct::chem::Na]);
-	//std::cout << "Mg e : " << atoms[oct::chem::Mg].getElectronValencia() << "\n";
+	oct::chem::Molecule NaCl(atoms[oct::chem::Na],atoms[oct::chem::Cl]);
+	//NaCl.printFormuleText(std::cout);
+	//std::cout << "\n";
+	
 	oct::chem::Molecule MgCl2(atoms[oct::chem::Mg],atoms[oct::chem::Cl]);
-	MgCl2.printFormuleText(std::cout);
+	//MgCl2.printFormuleText(std::cout);
+	//std::cout << "\n";
 	
+	oct::chem::Atom* aO = &atoms[oct::chem::O];
+	oct::chem::Molecule O2(*aO,*aO);
+	O2.printFormuleText(std::cout);
+	//std::cout << "\n";
 	
+	oct::chem::Atom* aCl = &(atoms[oct::chem::Cl]);
+	oct::chem::Molecule Cl2(*aCl,*aCl);
+	//Cl2.printFormuleText(std::cout);
+	//std::cout << "\n";
 	
+	/*std::list<oct::chem::Molecule*> moleculesIon;
+	for(unsigned short i = 1; i < 30; i++)
+	{
+		oct::chem::Atom* a = &(atoms[oct::chem::randNumber()]);
+		oct::chem::Atom* b = &(atoms[oct::chem::randNumber()]);
+		if(a->isGasNoble() or b->isGasNoble()) continue;
+		
+		oct::chem::Molecule* m = new oct::chem::Molecule(*a,*b);
+		moleculesIon.push_back(m);
+		m->printFormuleText(std::cout);
+	}	
+	
+	for(oct::chem::Molecule* ml : moleculesIon)
+	{
+		delete ml;
+	}*/
 }
 
 int init(void)

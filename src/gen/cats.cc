@@ -36,4 +36,20 @@ namespace oct::chem
 		
 		return false;
 	}
+	bool Atom::genIsGasNoble(Symbol s)
+	{
+		switch(s)
+		{
+		case Symbol::He:
+		case Symbol::Ne:
+		case Symbol::Ar:
+		case Symbol::Kr:
+		case Symbol::Xe:
+		case Symbol::Rn:
+		case Symbol::Og:
+			return true;
+		default:
+			return false;
+		}
+	}
 }

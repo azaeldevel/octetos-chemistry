@@ -87,11 +87,9 @@ Atom::Atom()
 }
 Atom::Atom(Symbol s) : symbol(s)
 {
-	
 }
 Atom::Atom(AtomicNumber n) : symbol((Symbol)n)
 {
-	
 }
 
 AtomicNumber Atom::getAtomicNumber()const
@@ -105,7 +103,7 @@ Symbol Atom::getSymbol()const
 const QuantumNumber& Atom::getQuantumNumber()
 {
 	//generar si no existe
-	if(qnumber.size() == 0) genQuantumNumber(symbol, qnumber);
+	if(qnumber.empty()) genQuantumNumber(symbol, qnumber);
 	return qnumber;
 }
 const char* Atom::getName()const

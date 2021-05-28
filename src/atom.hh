@@ -180,6 +180,7 @@ public:
 	static const char* genNames(Symbol);
 	static const char* genStrSymbol(Symbol);
 	static void genQuantumNumber(Symbol,QuantumNumber&);
+	static void genQuantumNumber2(Symbol,QuantumNumber&);
 	static bool genIsMetal(Symbol);
 	static bool genIsNoMetal(Symbol);
 	static bool genIsGasNoble(Symbol);

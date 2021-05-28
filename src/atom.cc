@@ -60,7 +60,21 @@ QuantumNumber::operator std::string() const
 	
 	return str;
 }
-
+unsigned short QuantumNumber::getElectronValencia()const
+{
+	if(not empty())
+	{
+		unsigned short main = back().main;
+		unsigned short counte = 0;
+		for(unsigned short i = size() - 1; i > 0; i--)
+		{
+			if(at(i).main == main) counte += at(i).electron;
+		}
+		return counte;
+	}
+	
+	throw octetos::core::Exception("Numero cuantico no generado.",__FILE__,__LINE__);
+}
 
 
 
@@ -116,26 +130,7 @@ const char* Atom::getStringSymbol()const
 	if(symbol < Symbol::Kr) return genStrSymbol(symbol);
 	else return NULL;
 }
-unsigned short Atom::getElectronValencia()const
-{
-	if(qnumber.size() > 0)
-	{
-		unsigned short main = qnumber.back().main;
-		unsigned short counte = 0;
-		for(unsigned short i = qnumber.size() - 1; i > 0; i--)
-		{
-			if(qnumber[i].main == main) counte += qnumber[i].electron;
-		}
-		if(isMetal()) return counte;
-		else if(isNoMetal()) 
-		{
-			if(symbol == Symbol::H or symbol == Symbol::He) return 2 - counte;
-			else return 8 - counte;
-		}
-	}
-	
-	throw octetos::core::Exception("Numero cuantico no generado.",__FILE__,__LINE__);
-}
+
 
 void Atom::set(Symbol s)
 {

@@ -32,8 +32,8 @@ void testDeveloping()
 	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
 	{
 		CU_ASSERT(atoms[i].getSymbol() == oct::chem::Symbol::None);
-		const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
-		CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
+		//const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
+		//CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
 	}	
 	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
 	{
@@ -59,8 +59,19 @@ void testDeveloping()
 		}		
 	}
 		
-	unsigned short valenciaCl = atoms[oct::chem::Cl].getElectronValencia();
-	CU_ASSERT(valenciaCl == 1);
+	unsigned short valenciaCl = atoms[oct::chem::Cl].getQuantumNumber().getElectronValencia();
+	if(valenciaCl == 7)
+	{
+		CU_ASSERT(true);
+	}
+	else
+	{
+		std::string strQnA = (std::string)atoms[oct::chem::Cl].getQuantumNumber();
+		std::cout << "number : " << strQnA << "\n";
+		std::cout << "e : " << valenciaCl << "\n";
+		CU_ASSERT(false);
+	}
+	
 	
 	oct::chem::Molecule NaCl(atoms[oct::chem::Na],atoms[oct::chem::Cl]);
 	//NaCl.printFormuleText(std::cout);
@@ -75,8 +86,8 @@ void testDeveloping()
 	O2.printFormuleText(std::cout);
 	//std::cout << "\n";
 	
-	oct::chem::Atom* aCl = &(atoms[oct::chem::Cl]);
-	oct::chem::Molecule Cl2(*aCl,*aCl);
+	//oct::chem::Atom* aCl = &(atoms[oct::chem::Cl]);
+	//oct::chem::Molecule Cl2(*aCl,*aCl);
 	//Cl2.printFormuleText(std::cout);
 	//std::cout << "\n";
 	
@@ -90,8 +101,7 @@ void testDeveloping()
 		oct::chem::Molecule* m = new oct::chem::Molecule(*a,*b);
 		moleculesIon.push_back(m);
 		m->printFormuleText(std::cout);
-	}	
-	
+	}
 	for(oct::chem::Molecule* ml : moleculesIon)
 	{
 		delete ml;

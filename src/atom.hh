@@ -157,6 +157,8 @@ struct QuantumNumber : std::vector<Orbital>
 	unsigned short getElectronValencia()const;
 };
 
+typedef std::vector<unsigned short> Valencia;
+
 class Atom
 {
 public:
@@ -184,12 +186,15 @@ public:
 	static bool genIsMetal(Symbol);
 	static bool genIsNoMetal(Symbol);
 	static bool genIsGasNoble(Symbol);
+	static bool genValencias(Symbol,Valencia&);
 
 private:
 	//pameter load
 	Symbol symbol;
 	//demand load
 	QuantumNumber qnumber;
+
+	Valencia valencias;
 };
 
 }

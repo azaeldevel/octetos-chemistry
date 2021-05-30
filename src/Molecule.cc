@@ -35,7 +35,7 @@ namespace oct::chem
 			at(0).atom = b;
 			at(1).atom = a;		
 		}
-		if(a.getElectronValencia() == b.getElectronValencia())
+		/*if(a.getElectronValencia() == b.getElectronValencia())
 		{
 			at(0).amount = 1;
 			at(1).amount = 1;
@@ -44,7 +44,7 @@ namespace oct::chem
 		{
 			at(0).amount = at(1).atom.getElectronValencia();
 			at(1).amount = at(0).atom.getElectronValencia();
-		}
+		}*/
 	}
 	
 	void Molecule::reactionCovalen(const Atom& a, const Atom& b)
@@ -70,7 +70,7 @@ namespace oct::chem
 		{
 			resize(1);
 			at(0).atom = a;
-			if(a.getElectronValencia() >= 1) 
+			/*if(a.getElectronValencia() >= 1) 
 			{
 				at(0).amount = 2;
 			}
@@ -80,7 +80,7 @@ namespace oct::chem
 				msg += at(0).atom.getStringSymbol();
 				msg += "'";
 				throw octetos::core::Exception(msg,__FILE__,__LINE__);
-			}
+			}*/
 		}
 		else
 		{
@@ -96,7 +96,7 @@ namespace oct::chem
 				at(1).atom = a;
 			}
 			//
-			if(a.getElectronValencia() == b.getElectronValencia())
+			/*if(a.getElectronValencia() == b.getElectronValencia())
 			{
 				at(0).amount = 1;
 				at(1).amount = 1;
@@ -105,7 +105,7 @@ namespace oct::chem
 			{
 				at(0).amount = at(1).atom.getElectronValencia();
 				at(1).amount = at(0).atom.getElectronValencia();
-			}
+			}*/
 		}
 	}
 	
@@ -121,16 +121,14 @@ namespace oct::chem
 	
 	Molecule::Molecule(const Atom& a, const Atom& b)
 	{
-		reaction(a,b);
+		//reaction(a,b);
 	}
 	void Molecule::reaction(const Atom& a, const Atom& b)
 	{
-		/*
 		if(a.isMetal() and b.isNoMetal()) reactionIonic(a,b);
 		else if(b.isMetal() and a.isNoMetal()) reactionIonic(a,b);
 		else if(a.isNoMetal() and b.isNoMetal()) reactionCovalen(a,b);
 		else if(a.isMetal() and b.isMetal()) reactionMetalic(a,b);
-		*/			
 	}
 	void Molecule::printFormuleText(std::ostream& o)const
 	{

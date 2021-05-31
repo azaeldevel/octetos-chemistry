@@ -157,7 +157,7 @@ struct QuantumNumber : std::vector<Orbital>
 	unsigned short getElectronValencia()const;
 };
 
-typedef std::vector<unsigned short> Valencia;
+typedef std::vector<short> Valencia;
 
 class Atom
 {
@@ -171,6 +171,7 @@ public:
 	const char* getName()const;
 	const char* getStringSymbol()const;
 	const QuantumNumber& getQuantumNumber();
+	const Valencia& getValencias();
 
 	void set(Symbol);
 	void set(AtomicNumber);
@@ -193,7 +194,6 @@ private:
 	Symbol symbol;
 	//demand load
 	QuantumNumber qnumber;
-
 	Valencia valencias;
 };
 

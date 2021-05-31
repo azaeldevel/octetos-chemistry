@@ -182,10 +182,10 @@ bool genValencias_8(Symbol s,Valencia& v)
 		return true;
 	case Symbol::Hs:
 		{
-			std::string msg "Valencia desconocida para '";
-			msg += genNames(s);
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
 			msg += "'";
-		throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
 		}		
 	default :
 		return false;
@@ -211,8 +211,8 @@ bool genValencias_9(Symbol s,Valencia& v)
 		return true;	
 	case Symbol::Mt:
 		{
-			std::string msg "Valencia desconocida para '";
-			msg += genNames(s);
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
 			msg += "'";
 		throw octetos::core::Exception(msg,__FILE__,__LINE__);	
 		}		
@@ -220,7 +220,7 @@ bool genValencias_9(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_8(Symbol s,Valencia& v)
+bool genValencias_10(Symbol s,Valencia& v)
 {
 	switch(s)
 	{
@@ -243,19 +243,292 @@ bool genValencias_8(Symbol s,Valencia& v)
 		return true;
 	case Symbol::Ds:
 		{
-			std::string msg "Valencia desconocida para '";
-			msg += genNames(s);
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
 			msg += "'";
-		throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
 		}		
 	default :
 		return false;
 	}	
 }
-
+bool genValencias_11(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::Cu:	
+	case Symbol::Ag:	
+		v.push_back(1);
+		v.push_back(2);
+		v.push_back(3);
+		v.push_back(4);
+		v.resize(4);
+		return true;	
+	case Symbol::Au:	
+		v.push_back(1);
+		v.push_back(3);
+		v.resize(2);
+		return true;
+	case Symbol::Rg:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}
+bool genValencias_12(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::Cd:	
+	case Symbol::Hg:	
+		v.push_back(1);
+		v.push_back(2);
+		v.resize(2);
+		return true;	
+	case Symbol::Zn:	
+		v.push_back(2	);
+		v.resize(1);
+		return true;
+	case Symbol::Cn:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}
+bool genValencias_13(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::B:	
+	case Symbol::Al:
+	case Symbol::Ga:
+	case Symbol::In:	
+		v.push_back(3);
+		v.resize(1);
+		return true;	
+	case Symbol::Ti:	
+		v.push_back(3);
+		v.push_back(1);
+		v.resize(2);
+		return true;
+	case Symbol::Nh:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}
+bool genValencias_14(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::C:	
+	case Symbol::Ge:
+	case Symbol::Sn:
+	case Symbol::Pb:	
+		v.push_back(2);
+		v.push_back(4);
+		v.resize(2);
+		return true;	
+	case Symbol::Si:	
+		v.push_back(2);
+		v.resize(1);
+		return true;
+	case Symbol::Fl:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}
+bool genValencias_15(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::N:		
+		v.push_back(-3);
+		v.push_back(1);
+		v.push_back(2);
+		v.push_back(3);
+		v.push_back(4);
+		v.resize(5);
+		return true;
+	case Symbol::As:	
+	case Symbol::Sb:
+	case Symbol::Bi:	
+		v.push_back(-3);
+		v.push_back(3);
+		v.push_back(5);
+		v.resize(3);
+		return true;	
+	case Symbol::P:		
+		v.push_back(-3);
+		v.push_back(3);
+		v.push_back(4);
+		v.push_back(5);
+		v.resize(3);
+		return true;
+	case Symbol::Mc:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}
+bool genValencias_16(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::O:		
+		v.push_back(-2);
+		v.push_back(-1);
+		v.resize(2);
+		return true;
+	case Symbol::S:	
+	case Symbol::Se:
+	case Symbol::Te:	
+		v.push_back(-2);
+		v.push_back(2);
+		v.push_back(4);
+		v.push_back(6);
+		v.resize(4);
+		return true;	
+	case Symbol::Po:
+		v.push_back(-2);
+		v.push_back(2);
+		v.push_back(4);
+		v.resize(3);
+		return true;
+	case Symbol::Lv:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}
+bool genValencias_17(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::F:		
+		v.push_back(-1);
+		v.resize(1);
+		return true;
+	case Symbol::Cl:	
+	case Symbol::Br:
+	case Symbol::I:	
+		v.push_back(-1);
+		v.push_back(1);
+		v.push_back(3);
+		v.push_back(5);
+		v.resize(4);
+		return true;	
+	case Symbol::At:
+		v.push_back(-1);
+		v.push_back(1);
+		v.resize(2);
+		return true;
+	case Symbol::Ts:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}	
+bool genValencias_18(Symbol s,Valencia& v)
+{
+	switch(s)
+	{
+	case Symbol::He:	
+	case Symbol::Ne:	
+	case Symbol::Ar:
+	case Symbol::Kr:
+	case Symbol::Xe:
+	case Symbol::Rn:
+		v.clear();
+		return true;
+	case Symbol::Ts:
+		{
+			std::string msg = "Valencia desconocida para '";
+			msg += Atom::genNames(s);
+			msg += "'";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+		}		
+	default :
+		return false;
+	}	
+}
 bool Atom::genValencias(Symbol s,Valencia& v)
 {
+	if(genValencias_1(s,v)) return true;
 	
+	if(genValencias_2(s,v)) return true;
+	
+	if(genValencias_3(s,v)) return true;
+	
+	if(genValencias_4(s,v)) return true;
+	
+	if(genValencias_4(s,v)) return true;
+	
+	if(genValencias_5(s,v)) return true;
+	
+	if(genValencias_6(s,v)) return true;
+	
+	if(genValencias_7(s,v)) return true;
+	
+	if(genValencias_8(s,v)) return true;
+	
+	if(genValencias_9(s,v)) return true;
+	
+	if(genValencias_10(s,v)) return true;
+	
+	if(genValencias_11(s,v)) return true;
+	
+	if(genValencias_12(s,v)) return true;
+	
+	if(genValencias_13(s,v)) return true;
+	
+	if(genValencias_14(s,v)) return true;
+	
+	if(genValencias_15(s,v)) return true;
+	
+	if(genValencias_16(s,v)) return true;
+	
+	if(genValencias_17(s,v)) return true;
+	
+	if(genValencias_18(s,v)) return true;
+	
+	return false;
 }
 
 

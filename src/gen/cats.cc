@@ -46,7 +46,6 @@ namespace oct::chem
 		case Symbol::Kr:
 		case Symbol::Xe:
 		case Symbol::Rn:
-		case Symbol::Og:
 			return true;
 		default:
 			return false;

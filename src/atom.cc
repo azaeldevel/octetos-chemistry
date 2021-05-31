@@ -130,7 +130,11 @@ const char* Atom::getStringSymbol()const
 	if(symbol < Symbol::Kr) return genStrSymbol(symbol);
 	else return NULL;
 }
-
+const Valencia& Atom::getValencias()
+{
+	if(valencias.empty())genValencias(symbol,valencias);
+	return valencias;
+}
 
 void Atom::set(Symbol s)
 {

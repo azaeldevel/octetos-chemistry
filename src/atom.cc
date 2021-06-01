@@ -101,9 +101,11 @@ Atom::Atom()
 }
 Atom::Atom(Symbol s) : symbol(s)
 {
+	genValencias(symbol,valencias);
 }
 Atom::Atom(AtomicNumber n) : symbol((Symbol)n)
 {
+	genValencias(symbol,valencias);
 }
 
 AtomicNumber Atom::getAtomicNumber()const
@@ -122,17 +124,14 @@ const QuantumNumber& Atom::getQuantumNumber()
 }
 const char* Atom::getName()const
 {
-	if(symbol < Symbol::Kr) return genNames(symbol);
-	else return NULL;
+	return genNames(symbol);
 }
 const char* Atom::getStringSymbol()const
 {
-	if(symbol < Symbol::Kr) return genStrSymbol(symbol);
-	else return NULL;
+	return genStrSymbol(symbol);
 }
-const Valencia& Atom::getValencias()
+const Valencias& Atom::getValencias() const
 {
-	if(valencias.empty())genValencias(symbol,valencias);
 	return valencias;
 }
 

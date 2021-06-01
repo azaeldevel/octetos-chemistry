@@ -72,7 +72,8 @@ void testDeveloping()
 		CU_ASSERT(false);
 	}
 	const oct::chem::Valencia& valenciasCL = atoms[oct::chem::Cl].getValencias();
-	if(not valenciasCL.empty())
+	CU_ASSERT(valenciasCL.size() == 4)
+	/*if(not valenciasCL.empty())
 	{
 		std::cout << "Cl(";
 		for(short v : valenciasCL)
@@ -80,7 +81,7 @@ void testDeveloping()
 			std::cout << v << ",";
 		}
 		std::cout << ")\n";
-	}
+	}*/
 	
 	oct::chem::Molecule NaCl(atoms[oct::chem::Na],atoms[oct::chem::Cl]);
 	//NaCl.printFormuleText(std::cout);

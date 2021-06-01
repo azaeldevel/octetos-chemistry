@@ -8,7 +8,7 @@ namespace oct::chem
 {
 
 //https://www.quimicas.net/2015/07/tabla-de-valencias.html
-bool genValencias_1(Symbol s,Valencia& v)
+bool genValencias_1(Symbol s,Valencias& v)
 {
 	switch(s)
 	{		
@@ -32,7 +32,7 @@ bool genValencias_1(Symbol s,Valencia& v)
 	}
 	return true;
 }
-bool genValencias_2(Symbol s,Valencia& v)
+bool genValencias_2(Symbol s,Valencias& v)
 {
 	switch(s)
 	{				
@@ -49,7 +49,7 @@ bool genValencias_2(Symbol s,Valencia& v)
 		return false;
 	}
 }
-bool genValencias_3(Symbol s,Valencia& v)
+bool genValencias_3(Symbol s,Valencias& v)
 {
 	switch(s)
 	{				
@@ -62,7 +62,7 @@ bool genValencias_3(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_4(Symbol s,Valencia& v)
+bool genValencias_4(Symbol s,Valencias& v)
 {
 	switch(s)
 	{				
@@ -82,7 +82,7 @@ bool genValencias_4(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_5(Symbol s,Valencia& v)
+bool genValencias_5(Symbol s,Valencias& v)
 {
 	switch(s)
 	{				
@@ -103,7 +103,7 @@ bool genValencias_5(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_6(Symbol s,Valencia& v)
+bool genValencias_6(Symbol s,Valencias& v)
 {
 	switch(s)
 	{	
@@ -130,7 +130,7 @@ bool genValencias_6(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_7(Symbol s,Valencia& v)
+bool genValencias_7(Symbol s,Valencias& v)
 {
 	switch(s)
 	{	
@@ -159,7 +159,7 @@ bool genValencias_7(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_8(Symbol s,Valencia& v)
+bool genValencias_8(Symbol s,Valencias& v)
 {
 	switch(s)
 	{	
@@ -191,7 +191,7 @@ bool genValencias_8(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_9(Symbol s,Valencia& v)
+bool genValencias_9(Symbol s,Valencias& v)
 {
 	switch(s)
 	{		
@@ -220,7 +220,7 @@ bool genValencias_9(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_10(Symbol s,Valencia& v)
+bool genValencias_10(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -252,7 +252,7 @@ bool genValencias_10(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_11(Symbol s,Valencia& v)
+bool genValencias_11(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -280,7 +280,7 @@ bool genValencias_11(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_12(Symbol s,Valencia& v)
+bool genValencias_12(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -305,7 +305,7 @@ bool genValencias_12(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_13(Symbol s,Valencia& v)
+bool genValencias_13(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -332,7 +332,7 @@ bool genValencias_13(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_14(Symbol s,Valencia& v)
+bool genValencias_14(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -359,7 +359,7 @@ bool genValencias_14(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_15(Symbol s,Valencia& v)
+bool genValencias_15(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -397,7 +397,7 @@ bool genValencias_15(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_16(Symbol s,Valencia& v)
+bool genValencias_16(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -432,7 +432,7 @@ bool genValencias_16(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool genValencias_17(Symbol s,Valencia& v)
+bool genValencias_17(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -465,7 +465,7 @@ bool genValencias_17(Symbol s,Valencia& v)
 		return false;
 	}	
 }	
-bool genValencias_18(Symbol s,Valencia& v)
+bool genValencias_18(Symbol s,Valencias& v)
 {
 	switch(s)
 	{
@@ -488,7 +488,7 @@ bool genValencias_18(Symbol s,Valencia& v)
 		return false;
 	}	
 }
-bool Atom::genValencias(Symbol s,Valencia& v)
+bool Atom::genValencias(Symbol s,Valencias& v)
 {
 	if(genValencias_1(s,v)) return true;
 	

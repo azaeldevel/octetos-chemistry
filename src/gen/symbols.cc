@@ -90,173 +90,173 @@ const char* Atom::genStrSymbol(Symbol s)
 		return "Kr";
 		
 	case Symbol::Rb:
-		return "";
+		return "Rb";
 	case Symbol::Sr:
-		return "";
+		return "Sr";
 	case Symbol::Y:
-		return "";
+		return "Y";
 	case Symbol::Zr:
-		return "";
+		return "Zr";
 	case Symbol::Nb:
-		return "";
+		return "Nb";
 	case Symbol::Mo:
-		return "";
+		return "Mo";
 	case Symbol::Tc:
-		return "";
+		return "Tc";
 	case Symbol::Ru:
-		return "";
+		return "Ru";
 	case Symbol::Rh:
-		return "";
+		return "Rh";
 	case Symbol::Pd:
-		return "";
+		return "Pd";
 	case Symbol::Ag:
-		return "";
+		return "Ag";
 	case Symbol::Cd:
-		return "";
+		return "Cd";
 	case Symbol::In:
-		return "";
+		return "In";
 	case Symbol::Sn:
-		return "";
+		return "Sn";
 	case Symbol::Sb:
-		return "";
+		return "Sb";
 	case Symbol::Te:
-		return "";
+		return "Te";
 	case Symbol::I:
-		return "";
+		return "I";
 	case Symbol::Xe:
-		return "";
+		return "Xe";
 				
 	case Symbol::Cs:
-		return "";		
+		return "Cs";		
 	case Symbol::Ba:
-		return "";
+		return "Ba";
 		
 	case Symbol::La:
-		return "";
+		return "La";
 	case Symbol::Ce:
-		return "";
+		return "Ce";
 	case Symbol::Pr:
-		return "";
+		return "Pr";
 	case Symbol::Nd:
-		return "";
+		return "Nd";
 	case Symbol::Pm:
-		return "";
+		return "Pm";
 	case Symbol::Sm:
-		return "";
+		return "Sm";
 	case Symbol::Eu:
-		return "";
+		return "Eu";
 	case Symbol::Gd:
-		return "";
+		return "Gd";
 	case Symbol::Tb:
-		return "";
+		return "Tb";
 	case Symbol::Dy:	
 		return "";
 	case Symbol::Ho:
-		return "";
+		return "Ho";
 	case Symbol::Er:	
-		return "";
+		return "Er";
 	case Symbol::Tm:
-		return "";
+		return "Tm";
 	case Symbol::Yb:
-		return "";
+		return "Yb";
 		
 	case Symbol::Lu:
-		return "";
+		return "Lu";
 	case Symbol::Hf:	
-		return "";
+		return "Hf";
 	case Symbol::Ta:	
-		return "";
+		return "Ta";
 	case Symbol::W:	
-		return "";
+		return "W";
 	case Symbol::Re:
-		return "";
+		return "Re";
 	case Symbol::Os:
-		return "";
+		return "Os";
 	case Symbol::Ir:
-		return "";
+		return "Ir";
 	case Symbol::Pt:
-		break;
+		return "Pt";
 	case Symbol::Au:
-		break;
+		return "Au";
 	case Symbol::Hg:
-		break;
+		return "Hg";
 	case Symbol::Tl:
-		break;
+		return "Tl";
 	case Symbol::Pb:	
-		break;
+		return "pb";
 	case Symbol::Bi:
-		break;
+		return "Bi";
 	case Symbol::Po:
-		break;
+		return "Po";
 	case Symbol::At:
-		break;
+		return "At";
 	case Symbol::Rn:
-		break;
+		return "Rn";
 	case Symbol::Fr:	
-		break;
+		return "Fr";
 	case Symbol::Ra:	
-		break;
+		return "Ra";
 	case Symbol::Ac:	
-		break;
+		return "Ac";
 	case Symbol::Th:
-		break;
+		return "Th";
 	case Symbol::Pa:
-		break;
+		return "Pa";
 	case Symbol::U:	
-		break;
+		return "";
 	case Symbol::Np:	
-		break;
+		return "Np";
 	case Symbol::Pu:
-		break;
+		return "Pu";
 	case Symbol::Am:	
-		break;
+		return "Am";
 	case Symbol::Cm:
-		break;
+		return "Cm";
 	case Symbol::Bk:
-		break;
+		return "Bk";
 	case Symbol::Cf:	
-		break;
+		return "Cf";
 	case Symbol::Es:
-		break;
+		return "Es";
 	case Symbol::Fm:	
-		break;
+		return "Fm";
 	case Symbol::Md:
-		break;
+		return "Md";
 	case Symbol::No:
-		break;
+		return "No";
 		
 	case Symbol::Lr:
-		break;
+		return "Lr";
 	case Symbol::Rf:
-		break;
+		return "Rf";
 	case Symbol::Db:
-		break;
+		return "Db";
 	case Symbol::Sg:	
-		break;
+		return "Sg";
 	case Symbol::Bh:
-		break;
+		return "Bh";
 	case Symbol::Hs:
-		break;	
+		return "";	
 	case Symbol::Mt:	
-		break;
+		return "Mt";
 	case Symbol::Ds:
-		break;
+		return "Ds";
 	case Symbol::Rg:	
-		break;
+		return "Rg";
 	case Symbol::Cn:
-		break;
+		return "Cn";
 	case Symbol::Nh:	
-		break;
+		return "Nh";
 	case Symbol::Fl:
-		break;
+		return "Fl";
 	case Symbol::Mc:	
-		break;
+		return "Mc";
 	case Symbol::Lv:	
-		break;
+		return "Lv";
 	case Symbol::Ts:
-		break;
+		return "Ts";
 	case Symbol::Og:
-		break;
+		return "Og";
 	default:
 		std::string msg = "El elemento con numero atomico '";
 		msg += std::to_string(s) + "' no exite en la tabla perica(de la tierra!)";

@@ -9,8 +9,8 @@ const char* Atom::genNames(Symbol s)
 {
 	switch(s)
 	{
-	case 0:
-		return NULL;
+	case Symbol::None:
+		return "";
 		break;
 	case Symbol::H:
 		return "Hidrogeno";
@@ -90,173 +90,173 @@ const char* Atom::genNames(Symbol s)
 		return "Kripton";
 		
 	case Symbol::Rb:
-		return "";
+		return "Rubidio";
 	case Symbol::Sr:
-		return "";
+		return "Estroncio";
 	case Symbol::Y:
-		return "";
+		return "Itri";
 	case Symbol::Zr:
-		return "";
+		return "Zirconio";
 	case Symbol::Nb:
-		return "";
+		return "Niobio";
 	case Symbol::Mo:
-		return "";
+		return "Molibdeno";
 	case Symbol::Tc:
-		return "";
+		return "Tecnicio";
 	case Symbol::Ru:
-		return "";
+		return "Rutenio";
 	case Symbol::Rh:
-		return "";
+		return "Rodio";
 	case Symbol::Pd:
-		return "";
+		return "Paladio";
 	case Symbol::Ag:
-		return "";
+		return "Plata";
 	case Symbol::Cd:
-		return "";
+		return "Cadmio";
 	case Symbol::In:
-		return "";
+		return "Indio";
 	case Symbol::Sn:
-		return "";
+		return "Estano";
 	case Symbol::Sb:
-		return "";
+		return "Antimonio";
 	case Symbol::Te:
-		return "";
+		return "Teluro";
 	case Symbol::I:
-		return "";
+		return "Yodo";
 	case Symbol::Xe:
-		return "";
+		return "Xeon";
 				
 	case Symbol::Cs:
-		return "";		
+		return "Cesio";		
 	case Symbol::Ba:
-		return "";
+		return "Bario";
 		
 	case Symbol::La:
-		return "";
+		return "Lantano";
 	case Symbol::Ce:
-		return "";
+		return "Cerio";
 	case Symbol::Pr:
-		return "";
+		return "Praseodimio";
 	case Symbol::Nd:
-		return "";
+		return "Neodimio";
 	case Symbol::Pm:
-		return "";
+		return "Prometio";
 	case Symbol::Sm:
-		return "";
+		return "Samario";
 	case Symbol::Eu:
-		return "";
+		return "Europio";
 	case Symbol::Gd:
-		return "";
+		return "Gadolinio";
 	case Symbol::Tb:
-		return "";
+		return "Terbio";
 	case Symbol::Dy:	
-		return "";
+		return "Disprosio";
 	case Symbol::Ho:
-		return "";
+		return "Holmio";
 	case Symbol::Er:	
-		return "";
+		return "Erbio";
 	case Symbol::Tm:
-		return "";
+		return "Tulio";
 	case Symbol::Yb:
-		return "";
+		return "Iterbio";
 		
 	case Symbol::Lu:
-		return "";
+		return "Lutecio";
 	case Symbol::Hf:	
-		return "";
+		return "Hafnio";
 	case Symbol::Ta:	
-		return "";
+		return "Tantalio";
 	case Symbol::W:	
-		return "";
+		return "Wolframio";
 	case Symbol::Re:
-		return "";
+		return "Renio";
 	case Symbol::Os:
-		return "";
+		return "Osmio";
 	case Symbol::Ir:
-		return "";
-	case Symbol::Pt:
-		break;
+		return "Irdio";
+	case Symbol::Pt:		
+		return "Platino";
 	case Symbol::Au:
-		break;
+		return "Oro";
 	case Symbol::Hg:
-		break;
+		return "Mercurio";
 	case Symbol::Tl:
-		break;
+		return "Talio";
 	case Symbol::Pb:	
-		break;
+		return "Plomo";
 	case Symbol::Bi:
-		break;
+		return "Bismuto";
 	case Symbol::Po:
-		break;
+		return "Polonio";
 	case Symbol::At:
-		break;
+		return "Astato";
 	case Symbol::Rn:
-		break;
+		return "Radon";
 	case Symbol::Fr:	
-		break;
+		return "Francio";
 	case Symbol::Ra:	
-		break;
+		return "Radio";
 	case Symbol::Ac:	
-		break;
+		return "Actinio";
 	case Symbol::Th:
-		break;
+		return "Torio";
 	case Symbol::Pa:
-		break;
+		return "Proctantinio";
 	case Symbol::U:	
-		break;
+		return "Uranio";
 	case Symbol::Np:	
-		break;
+		return "Netunio";
 	case Symbol::Pu:
-		break;
+		return "Plutonio";
 	case Symbol::Am:	
-		break;
+		return "Americio";
 	case Symbol::Cm:
-		break;
+		return "Curio";
 	case Symbol::Bk:
-		break;
+		return "Berkelio";
 	case Symbol::Cf:	
-		break;
+		return "Californio";
 	case Symbol::Es:
-		break;
+		return "Einstenio";
 	case Symbol::Fm:	
-		break;
+		return "Fermio";
 	case Symbol::Md:
-		break;
+		return "Mendelevio";
 	case Symbol::No:
-		break;
+		return "Nobelio";
 		
 	case Symbol::Lr:
-		break;
+		return "Laurencio";
 	case Symbol::Rf:
-		break;
+		return "Rutherfordio";
 	case Symbol::Db:
-		break;
+		return "Dubnio";
 	case Symbol::Sg:	
-		break;
+		return "Seaborgio";
 	case Symbol::Bh:
-		break;
+		return "Bohrio";
 	case Symbol::Hs:
-		break;	
+		return "Hassio";	
 	case Symbol::Mt:	
-		break;
+		return "Meitnerio";
 	case Symbol::Ds:
-		break;
+		return "Darmstatio";
 	case Symbol::Rg:	
-		break;
+		return "Roentgenio";
 	case Symbol::Cn:
-		break;
+		return "Copernicio";
 	case Symbol::Nh:	
-		break;
+		return "Nihonio";
 	case Symbol::Fl:
-		break;
+		return "Flerovio";
 	case Symbol::Mc:	
-		break;
+		return "Moscovio";
 	case Symbol::Lv:	
-		break;
+		return "Livermorio";
 	case Symbol::Ts:
-		break;
+		return "Teneso";
 	case Symbol::Og:
-		break;
+		return "Oganesón";
 	default:
 		std::string msg = "El elemento con numero atomico '";
 		msg += std::to_string(s) + "' no exite en la tabla perica(de la tierra!)";

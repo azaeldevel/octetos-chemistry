@@ -3,6 +3,9 @@
 #ifndef OCTETOS_CHEMISTRY_MOLECULE_HH
 #define OCTETOS_CHEMISTRY_MOLECULE_HH
 
+#include <list>
+
+
 #include "atom.hh"
 
 
@@ -17,13 +20,13 @@ namespace oct::chem
 	class Molecule : public std::vector<Combination>
 	{
 	public:
-		Molecule(const Atom& a, const Atom& b);
+		Molecule();
 
 		void reaction(const Atom& a, const Atom& b);
 		void printFormuleText(std::ostream&)const;
 
+		static unsigned short reactionIonic(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
 	private:
-		void reactionIonic(const Atom& a, const Atom& b);
 		void reactionCovalen(const Atom& a, const Atom& b);
 		void reactionMetalic(const Atom& a, const Atom& b);
 	};

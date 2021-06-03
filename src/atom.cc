@@ -101,11 +101,11 @@ Atom::Atom()
 }
 Atom::Atom(Symbol s) : symbol(s)
 {
-	genValencias(symbol,valencias);
+	if(symbol > Symbol::None) genValencias(symbol,valencias);
 }
 Atom::Atom(AtomicNumber n) : symbol((Symbol)n)
 {
-	genValencias(symbol,valencias);
+	if(symbol > Symbol::None) genValencias(symbol,valencias);
 }
 
 AtomicNumber Atom::getAtomicNumber()const
@@ -138,10 +138,12 @@ const Valencias& Atom::getValencias() const
 void Atom::set(Symbol s)
 {
 	symbol = s;
+	if(symbol > Symbol::None) genValencias(symbol,valencias);
 }
 void Atom::set(AtomicNumber a)
 {
 	symbol = Symbol(a);
+	if(symbol > Symbol::None) genValencias(symbol,valencias);
 }
 
 bool Atom::isMetal()const
@@ -156,4 +158,51 @@ bool Atom::isGasNoble()const
 {
 	return genIsGasNoble(symbol);
 }
+
+Table::Table()
+{
+	for(unsigned short i = 0; i <= Symbol::Og; i++)
+	{
+		push_back(new Atom(i));
+	}
+	resize(Symbol::Og + 1);
+}
+Table::~Table()
+{
+	for(Atom* a : *this)
+	{
+		delete a;
+	}
+	clear();
+}
+
+
+Metales::Metales(Table& t)
+{
+	unsigned short count = 0;
+	for(Atom* a : t)
+	{
+		if(a->isMetal()) 
+		{
+			count++;
+			push_back(a);
+		}
+	}
+	resize(count);
+}
+
+NoMetales::NoMetales(Table& t)
+{
+	unsigned short count = 0;
+	for(Atom* a : t)
+	{
+		if(a->isNoMetal()) 
+		{
+			count++;
+			push_back(a);
+		}
+	}
+	resize(count);
+}
+
 }

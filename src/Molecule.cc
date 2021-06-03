@@ -1,4 +1,4 @@
-#include <octetos/core//Error.hh>
+#include <octetos/core/Error.hh>
 
 #include "Molecule.hh"
 

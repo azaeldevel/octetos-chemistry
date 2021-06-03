@@ -18,7 +18,7 @@
  */
 #include <CUnit/Basic.h>
 
-#include <list>
+//#include <list>
 #include <iostream>
 #include <Molecule.hh>
 
@@ -29,13 +29,13 @@ void testDeveloping()
 	unsigned short MAXNUMATOM = 118;
 	oct::chem::Atom atoms[MAXNUMATOM];
 	
-	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
+	for(unsigned short i = 1; i < MAXNUMATOM; i++)
 	{
 		CU_ASSERT(atoms[i].getSymbol() == oct::chem::Symbol::None);
 		//const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
 		//CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
 	}	
-	for(unsigned short i = 1; i <= MAXNUMATOM; i++)
+	for(unsigned short i = 1; i < MAXNUMATOM; i++)
 	{
 		atoms[i].set(i);	
 		CU_ASSERT(atoms[i].getSymbol() == atoms[i].getAtomicNumber()); //el numero atomico es equivalenmte a la enumeriacion
@@ -56,7 +56,7 @@ void testDeveloping()
 			std::string strQnA = (std::string)qnA;
 			std::cout << "number : " << strQnA << "\n";
 			CU_ASSERT(false);
-		}		
+		}
 	}
 		
 	unsigned short valenciaCl = atoms[oct::chem::Cl].getQuantumNumber().getElectronValencia();
@@ -71,7 +71,7 @@ void testDeveloping()
 		std::cout << "e : " << valenciaCl << "\n";
 		CU_ASSERT(false);
 	}
-	const oct::chem::Valencia& valenciasCL = atoms[oct::chem::Cl].getValencias();
+	const oct::chem::Valencias& valenciasCL = atoms[oct::chem::Cl].getValencias();
 	CU_ASSERT(valenciasCL.size() == 4)
 	/*if(not valenciasCL.empty())
 	{
@@ -83,39 +83,28 @@ void testDeveloping()
 		std::cout << ")\n";
 	}*/
 	
-	oct::chem::Molecule NaCl(atoms[oct::chem::Na],atoms[oct::chem::Cl]);
-	//NaCl.printFormuleText(std::cout);
-	//std::cout << "\n";
 	
-	oct::chem::Molecule MgCl2(atoms[oct::chem::Mg],atoms[oct::chem::Cl]);
-	//MgCl2.printFormuleText(std::cout);
-	//std::cout << "\n";
+	oct::chem::Table tperiodica;
+	oct::chem::Metales bMetales(tperiodica);
+	CU_ASSERT(bMetales.size() == 87);//no confirmado
+	oct::chem::NoMetales bNoMetales(tperiodica);
+	CU_ASSERT(bNoMetales.size() == 25);//no confirmado
 	
-	oct::chem::Atom* aO = &atoms[oct::chem::O];
-	oct::chem::Molecule O2(*aO,*aO);
-	O2.printFormuleText(std::cout);
-	//std::cout << "\n";
 	
-	//oct::chem::Atom* aCl = &(atoms[oct::chem::Cl]);
-	//oct::chem::Molecule Cl2(*aCl,*aCl);
-	//Cl2.printFormuleText(std::cout);
-	//std::cout << "\n";
+	std::list<oct::chem::Molecule*> lsMolecules;
 	
-	/*std::list<oct::chem::Molecule*> moleculesIon;
-	for(unsigned short i = 1; i < 30; i++)
+	unsigned int count = 0;
+	for(size_t i = 0; i < bMetales.size(); i++)
 	{
-		oct::chem::Atom* a = &(atoms[oct::chem::randNumber()]);
-		oct::chem::Atom* b = &(atoms[oct::chem::randNumber()]);
-		if(a->isGasNoble() or b->isGasNoble()) continue;
-		
-		oct::chem::Molecule* m = new oct::chem::Molecule(*a,*b);
-		moleculesIon.push_back(m);
-		m->printFormuleText(std::cout);
+		for(size_t j = 0; j < bNoMetales.size(); j++)
+		{
+			count++;
+			//lsMolecules->push_back(new oct::chem::Molecule());
+			//oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
+		}
 	}
-	for(oct::chem::Molecule* ml : moleculesIon)
-	{
-		delete ml;
-	}*/
+	std::cout << "Total moleculas : " << count << "\n";
+	
 }
 
 int init(void)

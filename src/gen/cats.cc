@@ -17,7 +17,7 @@ namespace oct::chem
 		if(s >= Symbol::K and s <= Symbol::Ga) return true;
 		if(s >= Symbol::Rb and s <= Symbol::Sn) return true;
 		if(s >= Symbol::Cs and s <= Symbol::Bi) return true;
-		if(s >= Symbol::Fr and s <= Symbol::Lv) return true;
+		if(s >= Symbol::Fr and s <= Symbol::Cn) return true;
 		
 		return false;
 	}
@@ -26,13 +26,11 @@ namespace oct::chem
 	{
 		if(s == Symbol::H) return true;
 		if(s == Symbol::He) return true;
-		if(s <= Symbol::B and s <= Symbol::Ne) return true;
-		if(s <= Symbol::Si and s <= Symbol::Ar) return true;
-		if(s <= Symbol::Ge and s <= Symbol::Kr) return true;
-		if(s <= Symbol::Sb and s <= Symbol::Xe) return true;
-		if(s <= Symbol::Po and s <= Symbol::Rn) return true;
-		if(s == Symbol::Ts) return true;
-		if(s == Symbol::Og) return true;
+		if(s >= Symbol::B and s <= Symbol::Ne) return true;
+		if(s >= Symbol::Si and s <= Symbol::Ar) return true;
+		if(s >= Symbol::Ge and s <= Symbol::Kr) return true;
+		if(s >= Symbol::Sb and s <= Symbol::Xe) return true;
+		if(s >= Symbol::Po and s <= Symbol::Rn) return true;
 		
 		return false;
 	}

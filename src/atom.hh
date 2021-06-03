@@ -198,6 +198,23 @@ private:
 	Valencias valencias;
 };
 
+class Table : public std::vector<Atom*>
+{
+public:
+	Table();
+	~Table();
+};
+class Metales : public std::vector<Atom*>
+{
+public:
+	Metales(Table&);
+};
+class NoMetales : public std::vector<Atom*>
+{
+public:
+	NoMetales(Table&);
+};
+
 }
 
 #endif

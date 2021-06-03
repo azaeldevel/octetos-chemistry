@@ -11,7 +11,6 @@
 
 namespace oct::chem
 {
-
 	struct Combination
 	{
 		Atom atom;

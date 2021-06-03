@@ -181,12 +181,7 @@ bool genValencias_8(Symbol s,Valencias& v)
 		v.resize(1);
 		return true;
 	case Symbol::Hs:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -210,12 +205,7 @@ bool genValencias_9(Symbol s,Valencias& v)
 		v.resize(2);
 		return true;	
 	case Symbol::Mt:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-		throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -242,12 +232,7 @@ bool genValencias_10(Symbol s,Valencias& v)
 		v.resize(2);
 		return true;
 	case Symbol::Ds:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -270,12 +255,7 @@ bool genValencias_11(Symbol s,Valencias& v)
 		v.resize(2);
 		return true;
 	case Symbol::Rg:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -295,12 +275,7 @@ bool genValencias_12(Symbol s,Valencias& v)
 		v.resize(1);
 		return true;
 	case Symbol::Cn:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -322,12 +297,7 @@ bool genValencias_13(Symbol s,Valencias& v)
 		v.resize(2);
 		return true;
 	case Symbol::Nh:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -349,12 +319,7 @@ bool genValencias_14(Symbol s,Valencias& v)
 		v.resize(1);
 		return true;
 	case Symbol::Fl:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -387,12 +352,7 @@ bool genValencias_15(Symbol s,Valencias& v)
 		v.resize(3);
 		return true;
 	case Symbol::Mc:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -422,12 +382,7 @@ bool genValencias_16(Symbol s,Valencias& v)
 		v.resize(3);
 		return true;
 	case Symbol::Lv:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -455,12 +410,7 @@ bool genValencias_17(Symbol s,Valencias& v)
 		v.resize(2);
 		return true;
 	case Symbol::Ts:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	
@@ -478,12 +428,7 @@ bool genValencias_18(Symbol s,Valencias& v)
 		v.clear();
 		return true;
 	case Symbol::Ts:
-		{
-			std::string msg = "Valencia desconocida para '";
-			msg += Atom::genNames(s);
-			msg += "'";
-			throw octetos::core::Exception(msg,__FILE__,__LINE__);	
-		}		
+		return true;		
 	default :
 		return false;
 	}	

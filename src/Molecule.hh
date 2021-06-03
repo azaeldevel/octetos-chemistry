@@ -31,8 +31,6 @@ namespace oct::chem
 		Molecule(unsigned short initAtoms);
 		Bond getBond()const;
 
-		void reaction(const Atom& a, const Atom& b);
-		void printFormuleText(std::ostream&)const;
 
 		void operator >> (std::ostream&);
 		void operator >> (std::string&);

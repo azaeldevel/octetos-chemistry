@@ -153,6 +153,15 @@ namespace oct::chem
 						short module = vcation % abs(vanion);
 						Molecule* mnew = new Molecule(2);
 						mnew->bond = bond;
+						if(bond == Bond::COVALENTNOTPOLAR and a.getSymbol() == b.getSymbol())
+						{
+							mnew->at(0).atom = a;
+							mnew->at(0).amount = 2;//TODO: Que pasa con distintas valecias?
+							mnew->resize(1);
+							count++;
+							lsm.push_back(mnew);
+							continue;
+						}
 						if(module == 0)
 						{
 							mnew->at(0).atom = a;
@@ -198,19 +207,8 @@ namespace oct::chem
 		return bond;
 	}
 	
-	void Molecule::reaction(const Atom& a, const Atom& b)
-	{
-		//reactionIonic(a,b,*this);
-	}
-	void Molecule::printFormuleText(std::ostream& o)const
-	{
-		for(const Combination& c : *this)
-		{
-			o << std::string(c.atom.getStringSymbol());
-			if(c.amount > 1) o << std::to_string(c.amount);
-		}
-	}
 	
+		
 	void Molecule::operator >> (std::ostream& o)
 	{
 		for(const Combination& c : *this)

@@ -33,7 +33,7 @@ namespace oct::chem
 					{
 						short module = vcation % abs(vanion);
 						Molecule* mnew = new Molecule(2);
-						mnew->link = Link::IONIC;
+						mnew->bond = Bond::IONIC;
 						if(module == 0)
 						{
 							mnew->at(0).atom = a;
@@ -46,7 +46,7 @@ namespace oct::chem
 						if(vcation / abs(vanion) == 1) continue;//si es la misma valencia no repetir
 						module = vanion % abs(vcation);
 						mnew = new Molecule(2);
-						mnew->link = Link::IONIC;
+						mnew->bond = Bond::IONIC;
 						if(module == 0)
 						{
 							mnew->at(0).atom = a;
@@ -75,9 +75,9 @@ namespace oct::chem
 		
 	}
 	
-	Link Molecule::getLink()const
+	Bond Molecule::getBond()const
 	{
-		return link;
+		return bond;
 	}
 	
 	void Molecule::reaction(const Atom& a, const Atom& b)

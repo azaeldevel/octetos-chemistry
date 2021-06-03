@@ -173,6 +173,7 @@ public:
 	const char* getStringSymbol()const;
 	const QuantumNumber& getQuantumNumber();
 	const Valencias& getValencias()const;
+	float getNegativityNumber();//escala de pauling
 
 	void set(Symbol);
 	void set(AtomicNumber);
@@ -189,6 +190,7 @@ public:
 	static bool genIsNoMetal(Symbol);
 	static bool genIsGasNoble(Symbol);
 	static bool genValencias(Symbol,Valencias&);
+	static float genNegativityNumber(Symbol);
 
 private:
 	//pameter load

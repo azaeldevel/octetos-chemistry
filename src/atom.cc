@@ -134,7 +134,10 @@ const Valencias& Atom::getValencias() const
 {
 	return valencias;
 }
-
+float Atom::getNegativityNumber()
+{
+	return symbol > Symbol::None ? genNegativityNumber(symbol) : 0.0;
+}
 void Atom::set(Symbol s)
 {
 	symbol = s;

@@ -1,0 +1,267 @@
+
+#include <octetos/core/Error.hh>
+
+#include "../atom.hh"
+
+namespace oct::chem
+{
+//https://www.quimica.es/enciclopedia/Electronegatividad.html
+float Atom::genNegativityNumber(Symbol s)
+{
+	switch(s)
+	{
+	case Symbol::None:
+		return 0.0;
+		
+	case Symbol::H:
+		return 2.1;
+	case Symbol::He:
+		return 0.0;
+		
+	case Symbol::Li:
+		return 0.98;
+	case Symbol::Be:
+		return 1.57;
+	case Symbol::B:
+		return 2.04;
+	case Symbol::C:
+		return 2.55;
+	case Symbol::N:
+		return 3.04;
+	case Symbol::O:
+		return 3.44;
+	case Symbol::F:
+		return 4.00;
+	case Symbol::Ne:
+		return 0.0;
+		
+	case Symbol::Na:
+		return 0.93;
+	case Symbol::Mg:
+		return 1.31;		
+	case Symbol::Al:
+		return 1.61;
+	case Symbol::Si:
+		return 1.90;
+	case Symbol::P:
+		return 2.19;
+	case Symbol::S:
+		return 2.58;
+	case Symbol::Cl:
+		return 3.16;
+	case Symbol::Ar:
+		return 0.0;
+		
+	case Symbol::K:
+		return 0.0;
+	case Symbol::Ca:
+		return 0.0;
+	case Symbol::Sc:
+		return 0.0;
+	case Symbol::Ti:
+		return 0.0;
+	case Symbol::V:
+		return 0.0;
+	case Symbol::Cr:
+		return 0.0;
+	case Symbol::Mn:
+		return 0.0;
+	case Symbol::Fe:
+		return 0.0;
+	case Symbol::Co:
+		return 0.0;
+	case Symbol::Ni:
+		return 0.0;
+	case Symbol::Cu:
+		return 0.0;
+	case Symbol::Zn:
+		return 0.0;
+	case Symbol::Ga:
+		return 0.0;
+	case Symbol::Ge:
+		return 0.0;
+	case Symbol::As:
+		return 0.0;
+	case Symbol::Se:
+		return 0.0;
+	case Symbol::Br:
+		return 0.0;
+	case Symbol::Kr:
+		return 0.0;
+		
+	case Symbol::Rb:
+		return 0.0;
+	case Symbol::Sr:
+		return 0.0;
+	case Symbol::Y:
+		return 0.0;
+	case Symbol::Zr:
+		return 0.0;
+	case Symbol::Nb:
+		return 0.0;
+	case Symbol::Mo:
+		return 0.0;
+	case Symbol::Tc:
+		return 0.0;
+	case Symbol::Ru:
+		return 0.0;
+	case Symbol::Rh:
+		return 0.0;
+	case Symbol::Pd:
+		return 0.0;
+	case Symbol::Ag:
+		return 0.0;
+	case Symbol::Cd:
+		return 0.0;
+	case Symbol::In:
+		return 0.0;
+	case Symbol::Sn:
+		return 0.0;
+	case Symbol::Sb:
+		return 0.0;
+	case Symbol::Te:
+		return 0.0;
+	case Symbol::I:
+		return 0.0;
+	case Symbol::Xe:
+		return 0.0;
+				
+	case Symbol::Cs:
+		return 0.0;		
+	case Symbol::Ba:
+		return 0.0;
+		
+	case Symbol::La:
+		return 0.0;
+	case Symbol::Ce:
+		return 0.0;
+	case Symbol::Pr:
+		return 0.0;
+	case Symbol::Nd:
+		return 0.0;
+	case Symbol::Pm:
+		return 0.0;
+	case Symbol::Sm:
+		return 0.0;
+	case Symbol::Eu:
+		return 0.0;
+	case Symbol::Gd:
+		return 0.0;
+	case Symbol::Tb:
+		return 0.0;
+	case Symbol::Dy:	
+		return 0.0;
+	case Symbol::Ho:
+		return 0.0;
+	case Symbol::Er:	
+		return 0.0;
+	case Symbol::Tm:
+		return 0.0;
+	case Symbol::Yb:
+		return 0.0;
+		
+	case Symbol::Lu:
+		return 0.0;
+	case Symbol::Hf:	
+		return 0.0;
+	case Symbol::Ta:	
+		return 0.0;
+	case Symbol::W:	
+		return 0.0;
+	case Symbol::Re:
+		return 0.0;
+	case Symbol::Os:
+		return 0.0;
+	case Symbol::Ir:
+		return 0.0;
+	case Symbol::Pt:		
+		return 0.0;
+	case Symbol::Au:
+		return 0.0;
+	case Symbol::Hg:
+		return 0.0;
+	case Symbol::Tl:
+		return 0.0;
+	case Symbol::Pb:	
+		return 0.0;
+	case Symbol::Bi:
+		return 0.0;
+	case Symbol::Po:
+		return 0.0;
+	case Symbol::At:
+		return 0.0;
+	case Symbol::Rn:
+		return 0.0;
+	case Symbol::Fr:	
+		return 0.0;
+	case Symbol::Ra:	
+		return 0.0;
+	case Symbol::Ac:	
+		return 0.0;
+	case Symbol::Th:
+		return 0.0;
+	case Symbol::Pa:
+		return 0.0;
+	case Symbol::U:	
+		return 0.0;
+	case Symbol::Np:	
+		return 0.0;
+	case Symbol::Pu:
+		return 0.0;
+	case Symbol::Am:	
+		return 0.0;
+	case Symbol::Cm:
+		return 0.0;
+	case Symbol::Bk:
+		return 0.0;
+	case Symbol::Cf:	
+		return 0.0;
+	case Symbol::Es:
+		return 0.0;
+	case Symbol::Fm:	
+		return 0.0;
+	case Symbol::Md:
+		return 0.0;
+	case Symbol::No:
+		return 0.0;
+		
+	case Symbol::Lr:
+		return 0.0;
+	case Symbol::Rf:
+		return 0.0;
+	case Symbol::Db:
+		return 0.0;
+	case Symbol::Sg:	
+		return 0.0;
+	case Symbol::Bh:
+		return 0.0;
+	case Symbol::Hs:
+		return 0.0;	
+	case Symbol::Mt:	
+		return 0.0;
+	case Symbol::Ds:
+		return 0.0;
+	case Symbol::Rg:	
+		return 0.0;
+	case Symbol::Cn:
+		return 0.0;
+	case Symbol::Nh:	
+		return 0.0;
+	case Symbol::Fl:
+		return 0.0;
+	case Symbol::Mc:	
+		return 0.0;
+	case Symbol::Lv:	
+		return 0.0;
+	case Symbol::Ts:
+		return 0.0;
+	case Symbol::Og:
+		return 0.0;
+	default:
+		std::string msg = "El elemento con numero atomico '";
+		msg += std::to_string(s) + "' no exite en la tabla perica(de la tierra!)";
+		throw octetos::core::Exception(msg,__FILE__,__LINE__);	
+	}
+	return NULL;
+}
+}

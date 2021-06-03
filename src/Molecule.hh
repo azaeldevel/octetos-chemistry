@@ -11,7 +11,7 @@
 
 namespace oct::chem
 {
-	enum Link
+	enum Bond
 	{
 		IONIC,
 		COVALENT
@@ -26,7 +26,7 @@ namespace oct::chem
 	public:
 		Molecule();
 		Molecule(unsigned short initAtoms);
-		Link getLink()const;
+		Bond getBond()const;
 
 		void reaction(const Atom& a, const Atom& b);
 		void printFormuleText(std::ostream&)const;
@@ -35,10 +35,9 @@ namespace oct::chem
 		void operator >> (std::string&);
 
 		static unsigned short reactionIonic(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
+		static unsigned short reactionCovalent(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
 	private:
-		void reactionCovalen(const Atom& a, const Atom& b);
-		void reactionMetalic(const Atom& a, const Atom& b);
-		Link link;
+		Bond bond;
 
 	};
 

@@ -53,78 +53,78 @@ float Atom::genNegativityNumber(Symbol s)
 		return 0.0;
 		
 	case Symbol::K:
-		return 0.0;
+		return 0.82;
 	case Symbol::Ca:
-		return 0.0;
+		return 1.00;
 	case Symbol::Sc:
-		return 0.0;
+		return 1.36;
 	case Symbol::Ti:
-		return 0.0;
+		return 1.54;
 	case Symbol::V:
-		return 0.0;
+		return 1.63;
 	case Symbol::Cr:
-		return 0.0;
+		return 1.66;
 	case Symbol::Mn:
-		return 0.0;
+		return 1.55;
 	case Symbol::Fe:
-		return 0.0;
+		return 1.83;
 	case Symbol::Co:
-		return 0.0;
+		return 1.88;
 	case Symbol::Ni:
-		return 0.0;
+		return 1.91;
 	case Symbol::Cu:
-		return 0.0;
+		return 1.90;
 	case Symbol::Zn:
-		return 0.0;
+		return 1.65;
 	case Symbol::Ga:
-		return 0.0;
+		return 1.81;
 	case Symbol::Ge:
-		return 0.0;
+		return 2.01;
 	case Symbol::As:
-		return 0.0;
+		return 2.18;
 	case Symbol::Se:
-		return 0.0;
+		return 2.55;
 	case Symbol::Br:
-		return 0.0;
+		return 2.96;
 	case Symbol::Kr:
-		return 0.0;
+		return 3.0;
 		
 	case Symbol::Rb:
-		return 0.0;
+		return 0.82;
 	case Symbol::Sr:
-		return 0.0;
+		return 0.95;
 	case Symbol::Y:
 		return 0.0;
 	case Symbol::Zr:
-		return 0.0;
+		return 1.22;
 	case Symbol::Nb:
-		return 0.0;
+		return 1.60;
 	case Symbol::Mo:
-		return 0.0;
+		return 2.16;
 	case Symbol::Tc:
-		return 0.0;
+		return 1.90;
 	case Symbol::Ru:
-		return 0.0;
+		return 2.20;
 	case Symbol::Rh:
-		return 0.0;
+		return 2.28;
 	case Symbol::Pd:
-		return 0.0;
+		return 2.20;
 	case Symbol::Ag:
-		return 0.0;
+		return 1.93;
 	case Symbol::Cd:
-		return 0.0;
+		return 1.69;
 	case Symbol::In:
-		return 0.0;
+		return 1.78;
 	case Symbol::Sn:
-		return 0.0;
+		return 1.96;
 	case Symbol::Sb:
-		return 0.0;
+		return 2.05;
 	case Symbol::Te:
-		return 0.0;
+		return 2.10;
 	case Symbol::I:
-		return 0.0;
+		return 2.66;
 	case Symbol::Xe:
-		return 0.0;
+		return 2.60;
 				
 	case Symbol::Cs:
 		return 0.0;		

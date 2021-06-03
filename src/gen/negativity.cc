@@ -192,41 +192,43 @@ float Atom::genNegativityNumber(Symbol s)
 		return 2.00;
 	case Symbol::Rn:
 		return 0.0;
-	case Symbol::Fr:	
-		return 0.0;
-	case Symbol::Ra:	
-		return 0.0;
-	case Symbol::Ac:	
-		return 0.0;
-	case Symbol::Th:
-		return 0.0;
-	case Symbol::Pa:
-		return 0.0;
-	case Symbol::U:	
-		return 0.0;
-	case Symbol::Np:	
-		return 0.0;
-	case Symbol::Pu:
-		return 0.0;
-	case Symbol::Am:	
-		return 0.0;
-	case Symbol::Cm:
-		return 0.0;
-	case Symbol::Bk:
-		return 0.0;
-	case Symbol::Cf:	
-		return 0.0;
-	case Symbol::Es:
-		return 0.0;
-	case Symbol::Fm:	
-		return 0.0;
-	case Symbol::Md:
-		return 0.0;
-	case Symbol::No:
-		return 0.0;
 		
+	case Symbol::Fr:	
+		return 0.70;
+	case Symbol::Ra:	
+		return 0.90;
+		
+	case Symbol::Ac:	
+		return 1.10;
+	case Symbol::Th:
+		return 1.30;
+	case Symbol::Pa:
+		return 1.50;
+	case Symbol::U:	
+		return 1.38;
+	case Symbol::Np:	
+		return 1.36;
+	case Symbol::Pu:
+		return 1.28;
+	case Symbol::Am:	
+		return 1.13;
+	case Symbol::Cm:
+		return 1.28;
+	case Symbol::Bk:
+		return 1.30;
+	case Symbol::Cf:	
+		return 1.30;
+	case Symbol::Es:
+		return 1.30;
+	case Symbol::Fm:	
+		return 1.30;
+	case Symbol::Md:
+		return 1.30;
+	case Symbol::No:
+		return 1.30;
 	case Symbol::Lr:
 		return 0.0;
+		
 	case Symbol::Rf:
 		return 0.0;
 	case Symbol::Db:

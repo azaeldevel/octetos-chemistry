@@ -102,11 +102,12 @@ void testDeveloping()
 			count += oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
 		}
 	}
+	//CU_ASSERT(lsMolecules.size() == 1099);
 	std::cout << "Total moleculas : " << count << "\n";
 	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";
 	for(oct::chem::Molecule* m : lsMolecules)
 	{
-		m->printFormuleText(std::cout);
+		*m >> std::cout ;
 		std::cout << "\n";
 	}
 	

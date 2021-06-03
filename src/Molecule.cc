@@ -32,9 +32,23 @@ namespace oct::chem
 					if(vanion < 0)
 					{
 						short module = vcation % abs(vanion);
+						Molecule* mnew = new Molecule(2);
+						mnew->link = Link::IONIC;
 						if(module == 0)
 						{
-							Molecule* mnew = new Molecule(2);
+							mnew->at(0).atom = a;
+							mnew->at(0).amount = abs(vanion);
+							mnew->at(1).atom = b;
+							mnew->at(1).amount = vcation;
+							count++;
+							lsm.push_back(mnew);
+						}
+						if(vcation / abs(vanion) == 1) continue;//si es la misma valencia no repetir
+						module = vanion % abs(vcation);
+						mnew = new Molecule(2);
+						mnew->link = Link::IONIC;
+						if(module == 0)
+						{
 							mnew->at(0).atom = a;
 							mnew->at(0).amount = abs(vanion);
 							mnew->at(1).atom = b;
@@ -60,6 +74,12 @@ namespace oct::chem
 	{
 		
 	}
+	
+	Link Molecule::getLink()const
+	{
+		return link;
+	}
+	
 	void Molecule::reaction(const Atom& a, const Atom& b)
 	{
 		//reactionIonic(a,b,*this);
@@ -73,4 +93,22 @@ namespace oct::chem
 		}
 	}
 	
+	void Molecule::operator >> (std::ostream& o)
+	{
+		for(const Combination& c : *this)
+		{
+			o << std::string(c.atom.getStringSymbol());
+			if(c.amount > 1) o << std::to_string(c.amount);
+		}		
+	}
+	
+	void Molecule::operator >> (std::string& o)
+	{
+		for(const Combination& c : *this)
+		{
+			o += std::string(c.atom.getStringSymbol());
+			if(c.amount > 1) o += std::to_string(c.amount);
+		}		
+	}
+		
 }

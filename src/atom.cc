@@ -31,7 +31,6 @@ AtomicNumber randNumber()
 
 
 
-
 QuantumNumber::operator std::string() const
 {
 	std::string str = "";

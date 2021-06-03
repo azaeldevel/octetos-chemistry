@@ -93,23 +93,34 @@ void testDeveloping()
 	
 	std::list<oct::chem::Molecule*> lsMolecules;
 	
-	unsigned int count = 0;
+	//unsigned int count = 0;
+	float negativity = 0.0;
 	for(size_t i = 0; i < bMetales.size(); i++)
 	{
 		for(size_t j = 0; j < bNoMetales.size(); j++)
 		{
-			if(bNoMetales[j]->isGasNoble()) continue;
-			count += oct::chem::Molecule::reaction(*bMetales[i],*bNoMetales[j],lsMolecules);			
+			if(bNoMetales[j]->getNegativityNumber() < 0.001) continue;//no reactivos no p[articipan
+			negativity = abs(bMetales[i]->getNegativityNumber() - bNoMetales[j]->getNegativityNumber());
+			if(negativity > 1.7) oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
 		}
 	}
+	/*for(size_t i = 0; i < bNoMetales.size(); i++)
+	{
+		for(size_t j = 0; j < bNoMetales.size(); j++)
+		{
+			negativity = bNoMetales[i]->getNegativityNumber() - bNoMetales[j]->getNegativityNumber();
+			if(negativity <= -1.7 and negativity <= -0.4) count += oct::chem::Molecule::reactionCovalentNotPolar(*bMetales[i],*bNoMetales[j],lsMolecules);			
+		}
+	}*/
+	
 	CU_ASSERT(lsMolecules.size() > 0);
-	/*std::cout << "Total moleculas : " << count << "\n";
-	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";
+	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";		
 	for(oct::chem::Molecule* m : lsMolecules)
 	{
 		*m >> std::cout ;
 		std::cout << "\n";
-	}*/
+	}
+	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";
 	
 }
 

@@ -7,6 +7,31 @@
 namespace oct::chem
 {
 
+	const char* describe(Bond b)
+	{
+		switch(b)
+		{
+		case Bond::IONIC:
+			return "Ionico";
+		case Bond::COVALENTPOLAR:
+			return "Covalente Polar";
+		case Bond::COVALENTNOTPOLAR:
+			return "Covalente no Polar";
+		default:
+			return "";
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+	//metal + no metal
 	unsigned short Molecule::reactionIonic(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
 	{
 		if(not a.isMetal())
@@ -17,10 +42,64 @@ namespace oct::chem
 		{
 			throw octetos::core::Exception("El segundo elemento deve ser un no-metal.",__FILE__,__LINE__);
 		}
-		if(b.isGasNoble())
+		
+		return reactionDo(a,b,lsm,Bond::IONIC);
+	}
+	unsigned short Molecule::reactionCovalentPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
+	{
+		if(a.isNoMetal() and a.getSymbol() == b.getSymbol()) //no metal + no metal
 		{
-			std::string msg = b.getName();
-			msg += " no es reactivo(Gas Noble).";
+			
+		}
+		else if(a.isNoMetal() and b.isMetal()) //distinfos no metall
+		{
+		
+		}
+		else if(a.getSymbol() == Symbol::H and b.isNoMetal()) //no metal + H
+		{
+			
+		}
+		else
+		{
+			std::string msg = "Los reactivos ";
+			msg += a.getName();
+			msg += " y ";
+			msg += b.getName();
+			msg += " no son compatibles cun una enlaze covalente.";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);
+		}
+		
+		return reactionDo(a,b,lsm,Bond::COVALENTPOLAR);
+	}
+	unsigned short Molecule::reactionCovalentNotPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
+	{
+	
+		if(a.isNoMetal() and a.getSymbol() == b.getSymbol()) //no metal + no metal
+		{
+			
+		}
+		else if(a.isNoMetal() and b.isMetal()) //distinfos no metall
+		{
+		
+		}
+		else if(a.getSymbol() == Symbol::H and b.isNoMetal()) //no metal + H
+		{
+			
+		}
+		else
+		{
+			throw octetos::core::Exception("Los reactivos no son complatibles un un enlace colante",__FILE__,__LINE__);
+		}
+		
+		return reactionDo(a,b,lsm,Bond::COVALENTNOTPOLAR);
+	}
+	unsigned short Molecule::reactionDo(const Atom& a,const Atom& b, std::list<Molecule*>& lsm,Bond bond)
+	{		
+		if(a.getNegativityNumber() > b.getNegativityNumber())
+		{
+			std::string msg = a.getName();
+			msg += " deve ser menos electronegativo que ";
+			msg += b.getName();
 			throw octetos::core::Exception(msg,__FILE__,__LINE__);
 		}
 		
@@ -31,11 +110,44 @@ namespace oct::chem
 			{
 				for(valencia vanion : b.getValencias())
 				{
+					//verificacion de tipo de enlace
+					float diff = abs(a.getNegativityNumber() - b.getNegativityNumber());
+					if(diff < 0.4)
+					{
+						std::string msg = "No se puede realizar un enlace ";
+						msg += describe(bond);
+						msg += " con ";
+						msg += a.getName();
+						msg += " y ";
+						msg += b.getName();
+						if(bond != Bond::COVALENTNOTPOLAR) throw octetos::core::Exception(msg,__FILE__,__LINE__);
+					}
+					else if(0.4 >= diff and diff <= 1.7) 
+					{
+						std::string msg = "No se puede realizar un enlace ";
+						msg += describe(bond);
+						msg += " con ";
+						msg += a.getName();
+						msg += " y ";
+						msg += b.getName();
+						if(bond != Bond::COVALENTPOLAR) throw octetos::core::Exception(msg,__FILE__,__LINE__);						
+					}
+					else if(diff > 1.7)
+					{
+						std::string msg = "No se puede realizar un enlace ";
+						msg += describe(bond);
+						msg += " con ";
+						msg += a.getName();
+						msg += " y ";
+						msg += b.getName();
+						if(bond != Bond::IONIC) throw octetos::core::Exception(msg,__FILE__,__LINE__);					
+					}
+			
 					if(vanion < 0)
 					{
 						short module = vcation % abs(vanion);
 						Molecule* mnew = new Molecule(2);
-						mnew->bond = Bond::IONIC;
+						mnew->bond = bond;
 						if(module == 0)
 						{
 							mnew->at(0).atom = a;
@@ -48,7 +160,7 @@ namespace oct::chem
 						if(vcation / abs(vanion) == 1) continue;//si es la misma valencia no repetir
 						module = vanion % abs(vcation);
 						mnew = new Molecule(2);
-						mnew->bond = Bond::IONIC;
+						mnew->bond = bond;
 						if(module == 0)
 						{
 							mnew->at(0).atom = a;
@@ -65,35 +177,7 @@ namespace oct::chem
 		
 		return count;
 	}
-	unsigned short Molecule::reactionCovalentPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
-	{
 	
-		return 0;
-	}
-	unsigned short Molecule::reactionCovalentNotPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
-	{
-		return 0;
-	}
-	unsigned short Molecule::reaction(const Atom& a, const Atom& b,std::list<Molecule*>& lsm)
-	{
-		float diff = a.getNegativityNumber() - b.getNegativityNumber();
-		//std::cout << "Para " << a.getName() << " y " << b.getName() << " la diferencia es : " << diff << "\n";
-		if(diff < 0.0)
-		{
-			diff = abs(diff);
-			if(diff < 0.4) return reactionCovalentNotPolar(a,b,lsm);
-			else if(diff >= 0.4 and diff <= 1.7) return reactionCovalentPolar(a,b,lsm);
-			else if(diff > 1.7) return reactionIonic(a,b,lsm);
-		}
-		else if(diff > 0.0)
-		{				
-			if(diff < 0.4) return reactionCovalentNotPolar(b,a,lsm);
-			else if(diff >= 0.4 and diff <= 1.7) return reactionCovalentPolar(b,a,lsm);
-			else if(diff > 1.7) return reactionIonic(b,a,lsm);
-		}
-		
-		return 0;
-	}
 	
 	Molecule::Molecule()
 	{

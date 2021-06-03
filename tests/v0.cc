@@ -98,12 +98,17 @@ void testDeveloping()
 	{
 		for(size_t j = 0; j < bNoMetales.size(); j++)
 		{
-			count++;
-			//lsMolecules->push_back(new oct::chem::Molecule());
-			//oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
+			if(bNoMetales[j]->isGasNoble()) continue;
+			count += oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
 		}
 	}
 	std::cout << "Total moleculas : " << count << "\n";
+	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";
+	for(oct::chem::Molecule* m : lsMolecules)
+	{
+		m->printFormuleText(std::cout);
+		std::cout << "\n";
+	}
 	
 }
 

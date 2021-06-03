@@ -20,6 +20,7 @@ namespace oct::chem
 	{
 	public:
 		Molecule();
+		Molecule(unsigned short initAtoms);
 
 		void reaction(const Atom& a, const Atom& b);
 		void printFormuleText(std::ostream&)const;

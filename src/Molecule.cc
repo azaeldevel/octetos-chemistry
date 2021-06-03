@@ -11,13 +11,13 @@ namespace oct::chem
 		{
 			throw octetos::core::Exception("El primer elemento deve ser un metal.",__FILE__,__LINE__);
 		}
-		if(not b.isMetal())
+		if(not b.isNoMetal())
 		{
 			throw octetos::core::Exception("El segundo elemento deve ser un no-metal.",__FILE__,__LINE__);
 		}
 		if(b.isGasNoble())
 		{
-			std::string msg = a.getName();
+			std::string msg = b.getName();
 			msg += " no es reactivo(Gas Noble).";
 			throw octetos::core::Exception(msg,__FILE__,__LINE__);
 		}
@@ -34,13 +34,11 @@ namespace oct::chem
 						short module = vcation % abs(vanion);
 						if(module == 0)
 						{
-							Molecule* mnew = new Molecule();
-							Combination cma;
-							cma.atom = a;
-							cma.amount = abs(vanion);
-							Combination cmb;
-							cmb.atom = b;
-							cmb.amount = vcation;
+							Molecule* mnew = new Molecule(2);
+							mnew->at(0).atom = a;
+							mnew->at(0).amount = abs(vanion);
+							mnew->at(1).atom = b;
+							mnew->at(1).amount = vcation;
 							count++;
 							lsm.push_back(mnew);
 						}
@@ -55,6 +53,10 @@ namespace oct::chem
 
 	
 	Molecule::Molecule()
+	{
+		
+	}
+	Molecule::Molecule(unsigned short init) : std::vector<Combination>(init)
 	{
 		
 	}

@@ -101,18 +101,34 @@ void testDeveloping()
 		{
 			if(bNoMetales[j]->getNegativityNumber() < 0.001) continue;//no reactivos no p[articipan
 			negativity = abs(bMetales[i]->getNegativityNumber() - bNoMetales[j]->getNegativityNumber());
-			if(negativity > 1.7) oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
+			if(abs(negativity) > 1.7) oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
 		}
 	}
-	/*for(size_t i = 0; i < bNoMetales.size(); i++)
+	for(size_t i = 0; i < bNoMetales.size(); i++)
 	{
 		for(size_t j = 0; j < bNoMetales.size(); j++)
 		{
+			if(bNoMetales[i]->getNegativityNumber() < 0.001) continue;
+			if(bNoMetales[j]->getNegativityNumber() < 0.001) continue;
 			negativity = bNoMetales[i]->getNegativityNumber() - bNoMetales[j]->getNegativityNumber();
-			if(negativity <= -1.7 and negativity <= -0.4) count += oct::chem::Molecule::reactionCovalentNotPolar(*bMetales[i],*bNoMetales[j],lsMolecules);			
+			if(abs(negativity) < 0.4 or abs(negativity) > 1.7) continue;
+			if(negativity < 0.0) oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[i],*bNoMetales[j],lsMolecules);
+			else oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[j],*bNoMetales[i],lsMolecules);			
 		}
-	}*/
-	
+	}	
+	for(size_t i = 0; i < bNoMetales.size(); i++)
+	{
+		for(size_t j = 0; j < bNoMetales.size(); j++)
+		{
+			if(bNoMetales[i]->getNegativityNumber() < 0.001) continue;
+			if(bNoMetales[j]->getNegativityNumber() < 0.001) continue;
+			negativity = bNoMetales[i]->getNegativityNumber() - bNoMetales[j]->getNegativityNumber();
+			if(abs(negativity) > 0.4) continue;
+			if(negativity < 0.0) oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[i],*bNoMetales[j],lsMolecules);
+			else oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[j],*bNoMetales[i],lsMolecules);			
+		}
+	}
+
 	CU_ASSERT(lsMolecules.size() > 0);
 	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";		
 	for(oct::chem::Molecule* m : lsMolecules)

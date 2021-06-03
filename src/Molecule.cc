@@ -78,7 +78,7 @@ namespace oct::chem
 		{
 			
 		}
-		else if(a.isNoMetal() and b.isMetal()) //distinfos no metall
+		else if(a.isNoMetal() and b.isNoMetal()) //distinfos no metall
 		{
 		
 		}
@@ -88,7 +88,12 @@ namespace oct::chem
 		}
 		else
 		{
-			throw octetos::core::Exception("Los reactivos no son complatibles un un enlace colante",__FILE__,__LINE__);
+			std::string msg = "Los reactivos ";
+			msg += a.getName();
+			msg += ", ";
+			msg += b.getName();
+			msg += " no son compatible scon un enlace covalente no polar";
+			throw octetos::core::Exception(msg,__FILE__,__LINE__);
 		}
 		
 		return reactionDo(a,b,lsm,Bond::COVALENTNOTPOLAR);

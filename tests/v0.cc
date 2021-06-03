@@ -99,17 +99,17 @@ void testDeveloping()
 		for(size_t j = 0; j < bNoMetales.size(); j++)
 		{
 			if(bNoMetales[j]->isGasNoble()) continue;
-			count += oct::chem::Molecule::reactionIonic(*bMetales[i],*bNoMetales[j],lsMolecules);			
+			count += oct::chem::Molecule::reaction(*bMetales[i],*bNoMetales[j],lsMolecules);			
 		}
 	}
-	//CU_ASSERT(lsMolecules.size() == 1099);
-	std::cout << "Total moleculas : " << count << "\n";
+	CU_ASSERT(lsMolecules.size() > 0);
+	/*std::cout << "Total moleculas : " << count << "\n";
 	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";
 	for(oct::chem::Molecule* m : lsMolecules)
 	{
 		*m >> std::cout ;
 		std::cout << "\n";
-	}
+	}*/
 	
 }
 

@@ -34,11 +34,14 @@ namespace oct::chem
 		void operator >> (std::ostream&);
 		void operator >> (std::string&);
 
-		static unsigned short reactionIonic(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
-		static unsigned short reactionCovalent(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
+		static unsigned short reaction(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
 	private:
 		Bond bond;
 
+
+		static unsigned short reactionIonic(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
+		static unsigned short reactionCovalentPolar(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
+		static unsigned short reactionCovalentNotPolar(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
 	};
 
 }

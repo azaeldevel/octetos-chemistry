@@ -173,7 +173,7 @@ public:
 	const char* getStringSymbol()const;
 	const QuantumNumber& getQuantumNumber();
 	const Valencias& getValencias()const;
-	float getNegativityNumber();//escala de pauling
+	float getNegativityNumber()const;//escala de pauling
 
 	void set(Symbol);
 	void set(AtomicNumber);

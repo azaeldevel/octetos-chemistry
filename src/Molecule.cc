@@ -1,4 +1,6 @@
 #include <octetos/core/Error.hh>
+#include <iostream>
+
 
 #include "Molecule.hh"
 
@@ -63,8 +65,35 @@ namespace oct::chem
 		
 		return count;
 	}
+	unsigned short Molecule::reactionCovalentPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
+	{
 	
-
+		return 0;
+	}
+	unsigned short Molecule::reactionCovalentNotPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
+	{
+		return 0;
+	}
+	unsigned short Molecule::reaction(const Atom& a, const Atom& b,std::list<Molecule*>& lsm)
+	{
+		float diff = a.getNegativityNumber() - b.getNegativityNumber();
+		//std::cout << "Para " << a.getName() << " y " << b.getName() << " la diferencia es : " << diff << "\n";
+		if(diff < 0.0)
+		{
+			diff = abs(diff);
+			if(diff < 0.4) return reactionCovalentNotPolar(a,b,lsm);
+			else if(diff >= 0.4 and diff <= 1.7) return reactionCovalentPolar(a,b,lsm);
+			else if(diff > 1.7) return reactionIonic(a,b,lsm);
+		}
+		else if(diff > 0.0)
+		{				
+			if(diff < 0.4) return reactionCovalentNotPolar(b,a,lsm);
+			else if(diff >= 0.4 and diff <= 1.7) return reactionCovalentPolar(b,a,lsm);
+			else if(diff > 1.7) return reactionIonic(b,a,lsm);
+		}
+		
+		return 0;
+	}
 	
 	Molecule::Molecule()
 	{

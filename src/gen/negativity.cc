@@ -14,9 +14,9 @@ float Atom::genNegativityNumber(Symbol s)
 		return 0.0;
 		
 	case Symbol::H:
-		return 2.1;
+		return 2.10;
 	case Symbol::He:
-		return 0.0;
+		return 0.00;
 		
 	case Symbol::Li:
 		return 0.98;
@@ -33,7 +33,7 @@ float Atom::genNegativityNumber(Symbol s)
 	case Symbol::F:
 		return 4.00;
 	case Symbol::Ne:
-		return 0.0;
+		return 0.00;
 		
 	case Symbol::Na:
 		return 0.93;
@@ -264,6 +264,7 @@ float Atom::genNegativityNumber(Symbol s)
 		msg += std::to_string(s) + "' no exite en la tabla perica(de la tierra!)";
 		throw octetos::core::Exception(msg,__FILE__,__LINE__);	
 	}
-	return NULL;
+	
+	return 0.00;
 }
 }

@@ -17,7 +17,7 @@ AtomicNumber randNumber()
 {
 	std::random_device rd;
 	std::mt19937 gen(rd());
-	std::uniform_real_distribution<double> distr(1, 36);
+	std::uniform_real_distribution<float> distr(0.99, 118);
 	
 	return distr(gen);
 }
@@ -134,7 +134,7 @@ const Valencias& Atom::getValencias() const
 {
 	return valencias;
 }
-float Atom::getNegativityNumber()
+float Atom::getNegativityNumber() const
 {
 	return symbol > Symbol::None ? genNegativityNumber(symbol) : 0.0;
 }

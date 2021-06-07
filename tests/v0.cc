@@ -91,9 +91,7 @@ void testDeveloping()
 	CU_ASSERT(bNoMetales.size() == 25);//no confirmado
 	
 	
-	std::list<oct::chem::Molecule*> lsMolecules;
-	
-	//unsigned int count = 0;
+	oct::chem::Molecule::List lsMolecules;	
 	float negativity = 0.0;
 	for(size_t i = 0; i < bMetales.size(); i++)
 	{
@@ -111,9 +109,9 @@ void testDeveloping()
 			if(bNoMetales[i]->getNegativityNumber() < 0.001) continue;
 			if(bNoMetales[j]->getNegativityNumber() < 0.001) continue;
 			negativity = bNoMetales[i]->getNegativityNumber() - bNoMetales[j]->getNegativityNumber();
-			if(abs(negativity) < 0.4 or abs(negativity) > 1.7) continue;
-			if(negativity < 0.0) oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[i],*bNoMetales[j],lsMolecules);
-			else oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[j],*bNoMetales[i],lsMolecules);			
+			if(std::abs(negativity) < 0.4 or std::abs(negativity) > 1.7) continue;
+			if(negativity < 0.0) oct::chem::Molecule::reactionCovalentPolar(*bNoMetales[i],*bNoMetales[j],lsMolecules);
+			else oct::chem::Molecule::reactionCovalentPolar(*bNoMetales[j],*bNoMetales[i],lsMolecules);			
 		}
 	}	
 	for(size_t i = 0; i < bNoMetales.size(); i++)
@@ -123,21 +121,37 @@ void testDeveloping()
 			if(bNoMetales[i]->getNegativityNumber() < 0.001) continue;
 			if(bNoMetales[j]->getNegativityNumber() < 0.001) continue;
 			negativity = bNoMetales[i]->getNegativityNumber() - bNoMetales[j]->getNegativityNumber();
-			if(abs(negativity) > 0.4) continue;
+			if(std::abs(negativity) > 0.4) continue;
 			if(negativity < 0.0) oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[i],*bNoMetales[j],lsMolecules);
 			else oct::chem::Molecule::reactionCovalentNotPolar(*bNoMetales[j],*bNoMetales[i],lsMolecules);			
 		}
 	}
-
 	CU_ASSERT(lsMolecules.size() > 0);
 	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";		
-	for(oct::chem::Molecule* m : lsMolecules)
+	for(oct::chem::Molecule::Element e : lsMolecules)
 	{
-		*m >> std::cout ;
+		(*e.second) >> std::cout ;
+		//std::cout << ", tipe :" << m->getBond();
 		std::cout << "\n";
 	}
-	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";
 	
+	
+	
+	/*unsigned short counCO2 = oct::chem::Molecule::reactionCovalentPolar(atoms[oct::chem::Symbol::C],atoms[oct::chem::Symbol::O],lsMoleculesCO2);
+	std::cout << "Total moleculas CO2 : " << lsMolecules.size() << "\n";
+	if(counCO2>0)
+	{
+		for(oct::chem::Molecule* m : lsMoleculesCO2)
+		{
+			*m >> std::cout ;
+			std::cout << "\n";
+		}
+	}*/
+	
+	for(oct::chem::Molecule::Element e : lsMolecules)
+	{
+		delete e.second;
+	}	
 }
 
 int init(void)

@@ -3,7 +3,7 @@
 #ifndef OCTETOS_CHEMISTRY_MOLECULE_HH
 #define OCTETOS_CHEMISTRY_MOLECULE_HH
 
-#include <list>
+#include <map>
 
 
 #include "atom.hh"
@@ -13,6 +13,7 @@ namespace oct::chem
 {
 	enum Bond
 	{
+		NOTBOUND,
 		IONIC,
 		COVALENTPOLAR,
 		COVALENTNOTPOLAR
@@ -27,6 +28,9 @@ namespace oct::chem
 	class Molecule : public std::vector<Combination>
 	{
 	public:
+		typedef std::map<std::string,oct::chem::Molecule*> List;
+		typedef std::pair<std::string,oct::chem::Molecule*> Element;
+	public:
 		Molecule();
 		Molecule(unsigned short initAtoms);
 		Bond getBond()const;
@@ -35,14 +39,14 @@ namespace oct::chem
 		void operator >> (std::ostream&);
 		void operator >> (std::string&);
 
-		static unsigned short reactionIonic(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
-		static unsigned short reactionCovalentPolar(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
-		static unsigned short reactionCovalentNotPolar(const Atom& a, const Atom& b,std::list<Molecule*>& lsm);
+		static unsigned short reactionIonic(const Atom& a, const Atom& b,List& lsm);
+		static unsigned short reactionCovalentPolar(const Atom& a, const Atom& b,List& lsm);
+		static unsigned short reactionCovalentNotPolar(const Atom& a, const Atom& b,List& lsm);
 		
 	private:
 		Bond bond;
 
-		static unsigned short reactionDo(const Atom& a, const Atom& b,std::list<Molecule*>& lsm,Bond);
+		static unsigned short reactionDo(const Atom& a, const Atom& b,List& lsm,Bond);
 	};
 
 }

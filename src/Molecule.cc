@@ -32,7 +32,7 @@ namespace oct::chem
 
 
 	//metal + no metal
-	unsigned short Molecule::reactionIonic(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
+	unsigned short Molecule::reactionIonic(const Atom& a,const Atom& b,List& lsm)
 	{
 		if(not a.isMetal())
 		{
@@ -45,13 +45,13 @@ namespace oct::chem
 		
 		return reactionDo(a,b,lsm,Bond::IONIC);
 	}
-	unsigned short Molecule::reactionCovalentPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
+	unsigned short Molecule::reactionCovalentPolar(const Atom& a,const Atom& b,List& lsm)
 	{
 		if(a.isNoMetal() and a.getSymbol() == b.getSymbol()) //no metal + no metal
 		{
 			
 		}
-		else if(a.isNoMetal() and b.isMetal()) //distinfos no metall
+		else if(a.isNoMetal() and b.isNoMetal()) //distintos no metall
 		{
 		
 		}
@@ -71,7 +71,7 @@ namespace oct::chem
 		
 		return reactionDo(a,b,lsm,Bond::COVALENTPOLAR);
 	}
-	unsigned short Molecule::reactionCovalentNotPolar(const Atom& a,const Atom& b, std::list<Molecule*>& lsm)
+	unsigned short Molecule::reactionCovalentNotPolar(const Atom& a,const Atom& b,List& lsm)
 	{
 	
 		if(a.isNoMetal() and a.getSymbol() == b.getSymbol()) //no metal + no metal
@@ -98,7 +98,7 @@ namespace oct::chem
 		
 		return reactionDo(a,b,lsm,Bond::COVALENTNOTPOLAR);
 	}
-	unsigned short Molecule::reactionDo(const Atom& a,const Atom& b, std::list<Molecule*>& lsm,Bond bond)
+	unsigned short Molecule::reactionDo(const Atom& a,const Atom& b, List& lsm,Bond bond)
 	{		
 		if(a.getNegativityNumber() > b.getNegativityNumber())
 		{
@@ -116,15 +116,23 @@ namespace oct::chem
 				for(valencia vanion : b.getValencias())
 				{
 					//verificacion de tipo de enlace
-					float diff = abs(a.getNegativityNumber() - b.getNegativityNumber());
+					float diff = std::abs(b.getNegativityNumber() - a.getNegativityNumber());					
 					if(diff < 0.4)
 					{
 						std::string msg = "No se puede realizar un enlace ";
 						msg += describe(bond);
 						msg += " con ";
 						msg += a.getName();
+						msg += "(";
+						msg += std::to_string(a.getNegativityNumber());
+						msg += ")";
 						msg += " y ";
 						msg += b.getName();
+						msg += "(";
+						msg += std::to_string(b.getNegativityNumber());
+						msg += ")";
+						msg += ", ya que la electronegatividad es ";
+						msg += std::to_string(diff);
 						if(bond != Bond::COVALENTNOTPOLAR) throw octetos::core::Exception(msg,__FILE__,__LINE__);
 					}
 					else if(0.4 >= diff and diff <= 1.7) 
@@ -149,8 +157,14 @@ namespace oct::chem
 					}
 			
 					if(vanion < 0)
-					{
-						short module = vcation % abs(vanion);
+					{						
+						unsigned short avanion = std::abs(vanion);
+						unsigned short div = vcation / abs(vanion);
+						unsigned short module1 = vcation % avanion;
+						unsigned short module2 = avanion % vcation;
+						//bool ox = (b.getSymbol() == Symbol::O and vanion == -1) true : false;
+						List::iterator it;
+						
 						Molecule* mnew = new Molecule(2);
 						mnew->bond = bond;
 						if(bond == Bond::COVALENTNOTPOLAR and a.getSymbol() == b.getSymbol())
@@ -158,32 +172,68 @@ namespace oct::chem
 							mnew->at(0).atom = a;
 							mnew->at(0).amount = 2;//TODO: Que pasa con distintas valecias?
 							mnew->resize(1);
-							count++;
-							lsm.push_back(mnew);
+							count++;std::string strmol;
+							(*mnew) >> strmol;
+							it = lsm.find(strmol);
+							if(it == lsm.end())
+							{
+								lsm.insert(Element(strmol,mnew));
+							}
+							else
+							{
+								delete mnew;
+							}
 							continue;
 						}
-						if(module == 0)
+
+						mnew->at(0).atom = a;
+						mnew->at(1).atom = b;
+						if( module1 == 0 and div == 1)
 						{
-							mnew->at(0).atom = a;
-							mnew->at(0).amount = abs(vanion);
-							mnew->at(1).atom = b;
-							mnew->at(1).amount = vcation;
-							count++;
-							lsm.push_back(mnew);
+							mnew->at(0).amount = 1;
+							mnew->at(1).amount = 1;							
 						}
-						if(vcation / abs(vanion) == 1) continue;//si es la misma valencia no repetir
-						module = vanion % abs(vcation);
+						else if( module1 == 0 and avanion == 2 * vcation)
+						{
+							mnew->at(0).amount = avanion/2;
+							mnew->at(1).amount = vcation/2;							
+						}
+						else if( module1 == 0 and avanion == 3 * vcation)
+						{
+							mnew->at(0).amount = avanion/3;
+							mnew->at(1).amount = vcation/3;							
+						}
+						else
+						{
+							mnew->at(0).amount = avanion;
+							mnew->at(1).amount = vcation;
+						}
+						count++;
+						std::string strmol;
+						(*mnew) >> strmol;
+						it = lsm.find(strmol);
+						if(it == lsm.end())
+						{
+							lsm.insert(Element(strmol,mnew));
+						}
+						else
+						{
+							delete mnew;
+						}
+
+						/*if(module1 == 0 and div == 1) continue;//si es la misma valencia no repetir
+						//module = vanion % abs(vcation);
 						mnew = new Molecule(2);
 						mnew->bond = bond;
-						if(module == 0)
+						//if(module == 0)
 						{
 							mnew->at(0).atom = a;
-							mnew->at(0).amount = abs(vanion);
 							mnew->at(1).atom = b;
+							mnew->at(0).amount = avanion;
 							mnew->at(1).amount = vcation;
 							count++;
 							lsm.push_back(mnew);
-						}
+						}*/
 					}
 				}
 			}

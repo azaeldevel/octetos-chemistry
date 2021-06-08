@@ -5,7 +5,7 @@
 
 namespace oct::chem
 {
-const char* Atom::genNames(Symbol s)
+const char* Atom::genNames(phy::Symbol s)
 {
 	switch(s)
 	{

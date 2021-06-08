@@ -13,14 +13,6 @@ namespace oct::chem
 
 
 
-AtomicNumber randNumber()
-{
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_real_distribution<float> distr(0.99, 118);
-	
-	return distr(gen);
-}
 
 
 
@@ -28,52 +20,6 @@ AtomicNumber randNumber()
 
 
 
-
-
-
-QuantumNumber::operator std::string() const
-{
-	std::string str = "";
-	
-	for(unsigned short i = 0; i < size(); i++)
-	{
-		str += std::to_string(at(i).main);
-		switch(at(i).orbital)
-		{
-		case Suborbital::s:
-			str += "s";
-			break;
-		case Suborbital::p:
-			str += "p";
-			break;
-		case Suborbital::d:
-			str += "d";
-			break;
-		case Suborbital::f:
-			str += "f";
-			break;
-		}
-		str += std::to_string(at(i).electron);
-		str += " ";
-	}
-	
-	return str;
-}
-unsigned short QuantumNumber::getElectronValencia()const
-{
-	if(not empty())
-	{
-		unsigned short main = back().main;
-		unsigned short counte = 0;
-		for(unsigned short i = size() - 1; i > 0; i--)
-		{
-			if(at(i).main == main) counte += at(i).electron;
-		}
-		return counte;
-	}
-	
-	throw octetos::core::Exception("Numero cuantico no generado.",__FILE__,__LINE__);
-}
 
 
 
@@ -96,78 +42,68 @@ unsigned short QuantumNumber::getElectronValencia()const
 
 Atom::Atom()
 {
-	symbol = Symbol::None;
+	
 }
-Atom::Atom(Symbol s) : symbol(s)
+Atom::Atom(phy::Symbol s) : oct::phy::Bohr(s)
 {
-	if(symbol > Symbol::None) genValencias(symbol,valencias);
+	Atom::genValencias(phy::Symbol(protonsCount),valencias);
+	Atom::genQuantumNumber(phy::Symbol(protonsCount), qnumber);
 }
-Atom::Atom(AtomicNumber n) : symbol((Symbol)n)
+Atom::Atom(phy::AtomicNumber n) : oct::phy::Bohr(n)
 {
-	if(symbol > Symbol::None) genValencias(symbol,valencias);
+	Atom::genValencias(phy::Symbol(protonsCount),valencias);
+	Atom::genQuantumNumber(phy::Symbol(protonsCount), qnumber);
 }
 
-AtomicNumber Atom::getAtomicNumber()const
+
+const phy::QuantumNumber& Atom::getQuantumNumber()
 {
-	return symbol;
-}
-Symbol Atom::getSymbol()const
-{
-	return symbol;
-}
-const QuantumNumber& Atom::getQuantumNumber()
-{
-	//generar si no existe
-	if(qnumber.empty()) genQuantumNumber(symbol, qnumber);
 	return qnumber;
 }
-const char* Atom::getName()const
-{
-	return genNames(symbol);
-}
-const char* Atom::getStringSymbol()const
-{
-	return genStrSymbol(symbol);
-}
-const Valencias& Atom::getValencias() const
-{
+
+const phy::Valencias& Atom::getValencias() const
+{	
 	return valencias;
 }
 float Atom::getNegativityNumber() const
 {
-	return symbol > Symbol::None ? genNegativityNumber(symbol) : 0.0;
+	return phy::Symbol(protonsCount) > phy::Symbol::None ? genNegativityNumber(phy::Symbol(protonsCount)) : 0.0;
 }
-void Atom::set(Symbol s)
+
+void Atom::set(phy::Symbol s)
 {
-	symbol = s;
-	if(symbol > Symbol::None) genValencias(symbol,valencias);
+	Bohr::set(s);
+	Atom::genValencias(phy::Symbol(s),valencias);
+	Atom::genQuantumNumber(phy::Symbol(s), qnumber);
 }
-void Atom::set(AtomicNumber a)
+void Atom::set(phy::AtomicNumber a)
 {
-	symbol = Symbol(a);
-	if(symbol > Symbol::None) genValencias(symbol,valencias);
+	Bohr::set(a);
+	Atom::genValencias(phy::Symbol(a),valencias);
+	Atom::genQuantumNumber(phy::Symbol(a), qnumber);
 }
+
 
 bool Atom::isMetal()const
 {
-	return genIsMetal(symbol);
+	return genIsMetal(phy::Symbol(protonsCount));
 }
 bool Atom::isNoMetal()const
 {
-	return genIsNoMetal(symbol);
+	return genIsNoMetal(phy::Symbol(protonsCount));
 }
 bool Atom::isGasNoble()const
 {
-	return genIsGasNoble(symbol);
+	return genIsGasNoble(phy::Symbol(protonsCount));
 }
 
 Table::Table()
 {
-	for(unsigned short i = 0; i <= Symbol::Og; i++)
+	for(unsigned short i = 0; i <= phy::Symbol::Og; i++)
 	{
 		push_back(new Atom(i));
 	}
-	resize(Symbol::Og + 1);
+	resize(phy::Symbol::Og + 1);
 }
 Table::~Table()
 {

@@ -6,258 +6,258 @@
 namespace oct::chem
 {
 //https://www.quimica.es/enciclopedia/Electronegatividad.html
-float Atom::genNegativityNumber(Symbol s)
+float Atom::genNegativityNumber(phy::Symbol s)
 {
 	switch(s)
 	{
-	case Symbol::None:
+	case phy::Symbol::None:
 		return 0.0;
 		
-	case Symbol::H:
+	case phy::Symbol::H:
 		return 2.10;
-	case Symbol::He:
+	case phy::Symbol::He:
 		return 0.00;
 		
-	case Symbol::Li:
+	case phy::Symbol::Li:
 		return 0.98;
-	case Symbol::Be:
+	case phy::Symbol::Be:
 		return 1.57;
-	case Symbol::B:
+	case phy::Symbol::B:
 		return 2.04;
-	case Symbol::C:
+	case phy::Symbol::C:
 		return 2.55;
-	case Symbol::N:
+	case phy::Symbol::N:
 		return 3.04;
-	case Symbol::O:
+	case phy::Symbol::O:
 		return 3.44;
-	case Symbol::F:
+	case phy::Symbol::F:
 		return 4.00;
-	case Symbol::Ne:
+	case phy::Symbol::Ne:
 		return 0.00;
 		
-	case Symbol::Na:
+	case phy::Symbol::Na:
 		return 0.93;
-	case Symbol::Mg:
+	case phy::Symbol::Mg:
 		return 1.31;		
-	case Symbol::Al:
+	case phy::Symbol::Al:
 		return 1.61;
-	case Symbol::Si:
+	case phy::Symbol::Si:
 		return 1.90;
-	case Symbol::P:
+	case phy::Symbol::P:
 		return 2.19;
-	case Symbol::S:
+	case phy:: Symbol::S:
 		return 2.58;
-	case Symbol::Cl:
+	case phy::Symbol::Cl:
 		return 3.16;
-	case Symbol::Ar:
+	case phy::Symbol::Ar:
 		return 0.0;
 		
-	case Symbol::K:
+	case phy::Symbol::K:
 		return 0.82;
-	case Symbol::Ca:
+	case phy::Symbol::Ca:
 		return 1.00;
-	case Symbol::Sc:
+	case phy::Symbol::Sc:
 		return 1.36;
-	case Symbol::Ti:
+	case phy::Symbol::Ti:
 		return 1.54;
-	case Symbol::V:
+	case phy::Symbol::V:
 		return 1.63;
-	case Symbol::Cr:
+	case phy::Symbol::Cr:
 		return 1.66;
-	case Symbol::Mn:
+	case phy::Symbol::Mn:
 		return 1.55;
-	case Symbol::Fe:
+	case phy::Symbol::Fe:
 		return 1.83;
-	case Symbol::Co:
+	case phy::Symbol::Co:
 		return 1.88;
-	case Symbol::Ni:
+	case phy::Symbol::Ni:
 		return 1.91;
-	case Symbol::Cu:
+	case phy::Symbol::Cu:
 		return 1.90;
-	case Symbol::Zn:
+	case phy::Symbol::Zn:
 		return 1.65;
-	case Symbol::Ga:
+	case phy::Symbol::Ga:
 		return 1.81;
-	case Symbol::Ge:
+	case phy::Symbol::Ge:
 		return 2.01;
-	case Symbol::As:
+	case phy::Symbol::As:
 		return 2.18;
-	case Symbol::Se:
+	case phy::Symbol::Se:
 		return 2.55;
-	case Symbol::Br:
+	case phy::Symbol::Br:
 		return 2.96;
-	case Symbol::Kr:
+	case phy::Symbol::Kr:
 		return 3.0;
 		
-	case Symbol::Rb:
+	case phy::Symbol::Rb:
 		return 0.82;
-	case Symbol::Sr:
+	case phy::Symbol::Sr:
 		return 0.95;
-	case Symbol::Y:
+	case phy::Symbol::Y:
 		return 0.0;
-	case Symbol::Zr:
+	case phy::Symbol::Zr:
 		return 1.22;
-	case Symbol::Nb:
+	case phy::Symbol::Nb:
 		return 1.60;
-	case Symbol::Mo:
+	case phy::Symbol::Mo:
 		return 2.16;
-	case Symbol::Tc:
+	case phy::Symbol::Tc:
 		return 1.90;
-	case Symbol::Ru:
+	case phy::Symbol::Ru:
 		return 2.20;
-	case Symbol::Rh:
+	case phy::Symbol::Rh:
 		return 2.28;
-	case Symbol::Pd:
+	case phy::Symbol::Pd:
 		return 2.20;
-	case Symbol::Ag:
+	case phy::Symbol::Ag:
 		return 1.93;
-	case Symbol::Cd:
+	case phy::Symbol::Cd:
 		return 1.69;
-	case Symbol::In:
+	case phy::Symbol::In:
 		return 1.78;
-	case Symbol::Sn:
+	case phy::Symbol::Sn:
 		return 1.96;
-	case Symbol::Sb:
+	case phy::Symbol::Sb:
 		return 2.05;
-	case Symbol::Te:
+	case phy::Symbol::Te:
 		return 2.10;
-	case Symbol::I:
+	case phy::Symbol::I:
 		return 2.66;
-	case Symbol::Xe:
+	case phy::Symbol::Xe:
 		return 2.60;
 				
-	case Symbol::Cs:
+	case phy::Symbol::Cs:
 		return 0.79;		
-	case Symbol::Ba:
+	case phy::Symbol::Ba:
 		return 0.89;
 		
-	case Symbol::La:
+	case phy::Symbol::La:
 		return 1.10;
-	case Symbol::Ce:
+	case phy::Symbol::Ce:
 		return 1.12;
-	case Symbol::Pr:
+	case phy::Symbol::Pr:
 		return 1.13;
-	case Symbol::Nd:
+	case phy::Symbol::Nd:
 		return 1.14;
-	case Symbol::Pm:
+	case phy::Symbol::Pm:
 		return 1.13;
-	case Symbol::Sm:
+	case phy::Symbol::Sm:
 		return 1.17;
-	case Symbol::Eu:
+	case phy::Symbol::Eu:
 		return 1.20;
-	case Symbol::Gd:
+	case phy::Symbol::Gd:
 		return 1.20;
-	case Symbol::Tb:
+	case phy::Symbol::Tb:
 		return 1.10;
-	case Symbol::Dy:	
+	case phy::Symbol::Dy:	
 		return 1.22;
-	case Symbol::Ho:
+	case phy::Symbol::Ho:
 		return 1.23;
-	case Symbol::Er:	
+	case phy::Symbol::Er:	
 		return 1.24;
-	case Symbol::Tm:
+	case phy::Symbol::Tm:
 		return 1.25;
-	case Symbol::Yb:
+	case phy::Symbol::Yb:
 		return 1.10;		
-	case Symbol::Lu:
+	case phy::Symbol::Lu:
 		return 1.27;
 		
-	case Symbol::Hf:	
+	case phy::Symbol::Hf:	
 		return 1.30;
-	case Symbol::Ta:	
+	case phy::Symbol::Ta:	
 		return 1.50;
-	case Symbol::W:	
+	case phy::Symbol::W:	
 		return 2.36;
-	case Symbol::Re:
+	case phy::Symbol::Re:
 		return 1.90;
-	case Symbol::Os:
+	case phy::Symbol::Os:
 		return 2.20;
-	case Symbol::Ir:
+	case phy::Symbol::Ir:
 		return 2.20;
-	case Symbol::Pt:		
+	case phy::Symbol::Pt:		
 		return 2.28;
-	case Symbol::Au:
+	case phy::Symbol::Au:
 		return 2.54;
-	case Symbol::Hg:
+	case phy::Symbol::Hg:
 		return 2.00;
-	case Symbol::Tl:
+	case phy::Symbol::Tl:
 		return 1.62;
-	case Symbol::Pb:	
+	case phy::Symbol::Pb:	
 		return 2.33;
-	case Symbol::Bi:
+	case phy::Symbol::Bi:
 		return 2.02;
-	case Symbol::Po:
+	case phy::Symbol::Po:
 		return 2.00;
-	case Symbol::At:
+	case phy::Symbol::At:
 		return 2.00;
-	case Symbol::Rn:
+	case phy::Symbol::Rn:
 		return 0.0;
 		
-	case Symbol::Fr:	
+	case phy::Symbol::Fr:	
 		return 0.70;
-	case Symbol::Ra:	
+	case phy::Symbol::Ra:	
 		return 0.90;
 		
-	case Symbol::Ac:	
+	case phy::Symbol::Ac:	
 		return 1.10;
-	case Symbol::Th:
+	case phy::Symbol::Th:
 		return 1.30;
-	case Symbol::Pa:
+	case phy::Symbol::Pa:
 		return 1.50;
-	case Symbol::U:	
+	case phy::Symbol::U:	
 		return 1.38;
-	case Symbol::Np:	
+	case phy::Symbol::Np:	
 		return 1.36;
-	case Symbol::Pu:
+	case phy::Symbol::Pu:
 		return 1.28;
-	case Symbol::Am:	
+	case phy::Symbol::Am:	
 		return 1.13;
-	case Symbol::Cm:
+	case phy::Symbol::Cm:
 		return 1.28;
-	case Symbol::Bk:
+	case phy::Symbol::Bk:
 		return 1.30;
-	case Symbol::Cf:	
+	case phy::Symbol::Cf:	
 		return 1.30;
-	case Symbol::Es:
+	case phy::Symbol::Es:
 		return 1.30;
-	case Symbol::Fm:	
+	case phy::Symbol::Fm:	
 		return 1.30;
-	case Symbol::Md:
+	case phy::Symbol::Md:
 		return 1.30;
-	case Symbol::No:
+	case phy::Symbol::No:
 		return 1.30;
-	case Symbol::Lr:
+	case phy::Symbol::Lr:
 		return 0.0;
 		
-	case Symbol::Rf:
+	case phy::Symbol::Rf:
 		return 0.0;
-	case Symbol::Db:
+	case phy::Symbol::Db:
 		return 0.0;
-	case Symbol::Sg:	
+	case phy::Symbol::Sg:	
 		return 0.0;
-	case Symbol::Bh:
+	case phy::Symbol::Bh:
 		return 0.0;
-	case Symbol::Hs:
+	case phy::Symbol::Hs:
 		return 0.0;	
-	case Symbol::Mt:	
+	case phy::Symbol::Mt:	
 		return 0.0;
-	case Symbol::Ds:
+	case phy::Symbol::Ds:
 		return 0.0;
-	case Symbol::Rg:	
+	case phy::Symbol::Rg:	
 		return 0.0;
-	case Symbol::Cn:
+	case phy::Symbol::Cn:
 		return 0.0;
-	case Symbol::Nh:	
+	case phy::Symbol::Nh:	
 		return 0.0;
-	case Symbol::Fl:
+	case phy::Symbol::Fl:
 		return 0.0;
-	case Symbol::Mc:	
+	case phy::Symbol::Mc:	
 		return 0.0;
-	case Symbol::Lv:	
+	case phy::Symbol::Lv:	
 		return 0.0;
-	case Symbol::Ts:
+	case phy::Symbol::Ts:
 		return 0.0;
-	case Symbol::Og:
+	case phy::Symbol::Og:
 		return 0.0;
 	default:
 		std::string msg = "El elemento con numero atomico '";

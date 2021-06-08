@@ -7,43 +7,43 @@
 namespace oct::chem
 {
 	
-	bool Atom::genIsMetal(Symbol s)
+	bool Atom::genIsMetal(phy::Symbol s)
 	{
-		if(s == Symbol::Li) return true;
-		if(s == Symbol::Be) return true;
-		if(s == Symbol::Na) return true;
-		if(s == Symbol::Mg) return true;
-		if(s == Symbol::Al) return true;
-		if(s >= Symbol::K and s <= Symbol::Ga) return true;
-		if(s >= Symbol::Rb and s <= Symbol::Sn) return true;
-		if(s >= Symbol::Cs and s <= Symbol::Bi) return true;
-		if(s >= Symbol::Fr and s <= Symbol::Cn) return true;
+		if(s == phy::Symbol::Li) return true;
+		if(s == phy::Symbol::Be) return true;
+		if(s == phy::Symbol::Na) return true;
+		if(s == phy::Symbol::Mg) return true;
+		if(s == phy::Symbol::Al) return true;
+		if(s >= phy::Symbol::K and s <= phy::Symbol::Ga) return true;
+		if(s >= phy::Symbol::Rb and s <= phy::Symbol::Sn) return true;
+		if(s >= phy::Symbol::Cs and s <= phy::Symbol::Bi) return true;
+		if(s >= phy::Symbol::Fr and s <= phy::Symbol::Cn) return true;
 		
 		return false;
 	}
 	
-	bool Atom::genIsNoMetal(Symbol s)
+	bool Atom::genIsNoMetal(phy::Symbol s)
 	{
-		if(s == Symbol::H) return true;
-		if(s == Symbol::He) return true;
-		if(s >= Symbol::B and s <= Symbol::Ne) return true;
-		if(s >= Symbol::Si and s <= Symbol::Ar) return true;
-		if(s >= Symbol::Ge and s <= Symbol::Kr) return true;
-		if(s >= Symbol::Sb and s <= Symbol::Xe) return true;
-		if(s >= Symbol::Po and s <= Symbol::Rn) return true;
+		if(s == phy::Symbol::H) return true;
+		if(s == phy::Symbol::He) return true;
+		if(s >= phy::Symbol::B and s <= phy::Symbol::Ne) return true;
+		if(s >= phy::Symbol::Si and s <= phy::Symbol::Ar) return true;
+		if(s >= phy::Symbol::Ge and s <= phy::Symbol::Kr) return true;
+		if(s >= phy::Symbol::Sb and s <= phy::Symbol::Xe) return true;
+		if(s >= phy::Symbol::Po and s <= phy::Symbol::Rn) return true;
 		
 		return false;
 	}
-	bool Atom::genIsGasNoble(Symbol s)
+	bool Atom::genIsGasNoble(phy::Symbol s)
 	{
 		switch(s)
 		{
-		case Symbol::He:
-		case Symbol::Ne:
-		case Symbol::Ar:
-		case Symbol::Kr:
-		case Symbol::Xe:
-		case Symbol::Rn:
+		case phy::Symbol::He:
+		case phy::Symbol::Ne:
+		case phy::Symbol::Ar:
+		case phy::Symbol::Kr:
+		case phy::Symbol::Xe:
+		case phy::Symbol::Rn:
 			return true;
 		default:
 			return false;

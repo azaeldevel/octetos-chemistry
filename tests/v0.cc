@@ -31,7 +31,7 @@ void testDeveloping()
 	
 	for(unsigned short i = 1; i < MAXNUMATOM; i++)
 	{
-		CU_ASSERT(atoms[i].getSymbol() == oct::chem::Symbol::None);
+		CU_ASSERT(atoms[i].getSymbol() == oct::phy::Symbol::None);
 		//const oct::chem::QuantumNumber& qnATmp = atoms[i].getQuantumNumber();
 		//CU_ASSERT(qnATmp.size() == 0);//el numero cuantico deve estar vacio de inicio
 	}	
@@ -39,9 +39,9 @@ void testDeveloping()
 	{
 		atoms[i].set(i);	
 		CU_ASSERT(atoms[i].getSymbol() == atoms[i].getAtomicNumber()); //el numero atomico es equivalenmte a la enumeriacion
-		const oct::chem::QuantumNumber& qnA = atoms[i].getQuantumNumber();
+		const oct::phy::QuantumNumber& qnA = atoms[i].getQuantumNumber();
 		unsigned short qnCountE = 0;
-		for(const oct::chem::Orbital& o : qnA)
+		for(const oct::phy::Orbital& o : qnA)
 		{
 			qnCountE += o.electron;
 		}		
@@ -59,19 +59,19 @@ void testDeveloping()
 		}
 	}
 		
-	unsigned short valenciaCl = atoms[oct::chem::Cl].getQuantumNumber().getElectronValencia();
+	unsigned short valenciaCl = atoms[oct::phy::Cl].getQuantumNumber().getElectronValencia();
 	if(valenciaCl == 7)
 	{
 		CU_ASSERT(true);
 	}
 	else
 	{
-		std::string strQnA = (std::string)atoms[oct::chem::Cl].getQuantumNumber();
+		std::string strQnA = (std::string)atoms[oct::phy::Cl].getQuantumNumber();
 		std::cout << "number : " << strQnA << "\n";
 		std::cout << "e : " << valenciaCl << "\n";
 		CU_ASSERT(false);
 	}
-	const oct::chem::Valencias& valenciasCL = atoms[oct::chem::Cl].getValencias();
+	const oct::phy::Valencias& valenciasCL = atoms[oct::phy::Cl].getValencias();
 	CU_ASSERT(valenciasCL.size() == 4)
 	/*if(not valenciasCL.empty())
 	{
@@ -90,7 +90,14 @@ void testDeveloping()
 	oct::chem::NoMetales bNoMetales(tperiodica);
 	CU_ASSERT(bNoMetales.size() == 25);//no confirmado
 	
-	
+	for(oct::chem::Atom* a : tperiodica)
+	{
+		std::cout << a->getName() << "\n";
+		std::cout << a->getNegativityNumber() << "\n";
+		std::string strQnA = (std::string)(a->getQuantumNumber());
+		std::cout << strQnA << "\n";
+		std::cout << "Valencias : " << a->getValencias().size() << "\n";
+	}
 	oct::chem::Molecule::List lsMolecules;	
 	float negativity = 0.0;
 	for(size_t i = 0; i < bMetales.size(); i++)
@@ -151,7 +158,7 @@ void testDeveloping()
 	for(oct::chem::Molecule::Element e : lsMolecules)
 	{
 		delete e.second;
-	}	
+	}
 }
 
 int init(void)

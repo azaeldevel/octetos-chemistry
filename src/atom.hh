@@ -3,7 +3,7 @@
 #define OCTETOS_CHEMISTRY_ATOM_HH
 
 
-#include <string>
+#include <octetos/physical/Atom-Bohr.hh>
 #include <vector>
 
 
@@ -11,193 +11,34 @@
 namespace oct::chem
 {
 
-typedef unsigned short AtomicNumber;
 
-enum Symbol
-{
-	None,
-	H,
-	He,
-	Li,
-	Be,
-	B,
-	C,
-	N,
-	O,
-	F,
-	Ne,
-	Na,
-	Mg,
-	Al,
-	Si,
-	P,
-	S,
-	Cl,
-	Ar,
-	K,
-	Ca,
-	Sc,
-	Ti,
-	V,
-	Cr,
-	Mn,
-	Fe,
-	Co,
-	Ni,
-	Cu,
-	Zn,
-	Ga,
-	Ge,
-	As,
-	Se,
-	Br,
-	Kr,
-	Rb,
-	Sr,
-	Y,
-	Zr,
-	Nb,
-	Mo,
-	Tc,
-	Ru,
-	Rh,
-	Pd,
-	Ag,
-	Cd,
-	In,
-	Sn,
-	Sb,
-	Te,
-	I,
-	Xe,
-	Cs,
-	Ba,
-	La,
-	Ce,
-	Pr,
-	Nd,
-	Pm,
-	Sm,
-	Eu,
-	Gd,
-	Tb,
-	Dy,
-	Ho,
-	Er,
-	Tm,
-	Yb,
-	Lu,
-	Hf,
-	Ta,
-	W,
-	Re,
-	Os,
-	Ir,
-	Pt,
-	Au,
-	Hg,
-	Tl,
-	Pb,
-	Bi,
-	Po,
-	At,
-	Rn,
-	Fr,
-	Ra,
-	Ac,
-	Th,
-	Pa,
-	U,
-	Np,
-	Pu,
-	Am,
-	Cm,
-	Bk,
-	Cf,
-	Es,
-	Fm,
-	Md,
-	No,
-	Lr,
-	Rf,
-	Db,
-	Sg,
-	Bh,
-	Hs,
-	Mt,
-	Ds,
-	Rg,
-	Cn,
-	Nh,
-	Fl,
-	Mc,
-	Lv,
-	Ts,
-	Og
-};
-enum Suborbital
-{
-	s,
-	p,
-	d,
-	f
-};
-
-AtomicNumber randNumber();
-struct Orbital
-{
-	unsigned short main;
-	Suborbital orbital;//tipode orbital
-	unsigned short electron;//electrones en el orbital
-};
-
-struct QuantumNumber : std::vector<Orbital>
-{
-	operator std::string() const;	
-	unsigned short getElectronValencia()const;
-};
-
-typedef short valencia;
-typedef std::vector<valencia> Valencias;
-
-class Atom
+class Atom : public oct::phy::Bohr
 {
 public:
 	Atom();
-	Atom(Symbol);
-	Atom(AtomicNumber);
+	Atom(phy::Symbol);
+	Atom(phy::AtomicNumber);
 
-	AtomicNumber getAtomicNumber()const;
-	Symbol getSymbol()const;
-	const char* getName()const;
-	const char* getStringSymbol()const;
-	const QuantumNumber& getQuantumNumber();
-	const Valencias& getValencias()const;
+	const phy::Valencias& getValencias()const;
 	float getNegativityNumber()const;//escala de pauling
+	const phy::QuantumNumber& getQuantumNumber();
 
-	void set(Symbol);
-	void set(AtomicNumber);
+	void set(phy::Symbol);
+	void set(phy::AtomicNumber);
 
 	bool isMetal()const;
 	bool isNoMetal()const;
 	bool isGasNoble()const;
 	
-	static const char* genNames(Symbol);
-	static const char* genStrSymbol(Symbol);
-	static void genQuantumNumber(Symbol,QuantumNumber&);
-	static void genQuantumNumber2(Symbol,QuantumNumber&);
-	static bool genIsMetal(Symbol);
-	static bool genIsNoMetal(Symbol);
-	static bool genIsGasNoble(Symbol);
-	static bool genValencias(Symbol,Valencias&);
-	static float genNegativityNumber(Symbol);
+	static void genQuantumNumber(phy::Symbol,phy::QuantumNumber&);
+	static bool genIsMetal(phy::Symbol);
+	static bool genIsNoMetal(phy::Symbol);
+	static bool genIsGasNoble(phy::Symbol);
+	static bool genValencias(phy::Symbol,phy::Valencias&);
+	static float genNegativityNumber(phy::Symbol);
 
-private:
-	//pameter load
-	Symbol symbol;
-	//demand load
-	QuantumNumber qnumber;
-	Valencias valencias;
+protected:
+	phy::Valencias valencias;
 };
 
 class Table : public std::vector<Atom*>

@@ -55,7 +55,7 @@ namespace oct::chem
 		{
 		
 		}
-		else if(a.getSymbol() == Symbol::H and b.isNoMetal()) //no metal + H
+		else if(a.getSymbol() == phy::Symbol::H and b.isNoMetal()) //no metal + H
 		{
 			
 		}
@@ -82,7 +82,7 @@ namespace oct::chem
 		{
 		
 		}
-		else if(a.getSymbol() == Symbol::H and b.isNoMetal()) //no metal + H
+		else if(a.getSymbol() == phy::Symbol::H and b.isNoMetal()) //no metal + H
 		{
 			
 		}
@@ -109,11 +109,11 @@ namespace oct::chem
 		}
 		
 		unsigned short count = 0;
-		for(valencia vcation : a.getValencias())
+		for(phy::valencia vcation : a.getValencias())
 		{
 			if(vcation > 0)
 			{
-				for(valencia vanion : b.getValencias())
+				for(phy::valencia vanion : b.getValencias())
 				{
 					//verificacion de tipo de enlace
 					float diff = std::abs(b.getNegativityNumber() - a.getNegativityNumber());					

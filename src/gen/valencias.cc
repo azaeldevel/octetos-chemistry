@@ -8,22 +8,22 @@ namespace oct::chem
 {
 
 //https://www.quimicas.net/2015/07/tabla-de-valencias.html
-bool genValencias_1(Symbol s,Valencias& v)
+bool genValencias_1(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{		
-	case Symbol::H:
+	case phy::Symbol::H:
 		v.push_back(-1);
 		v.push_back(1);
 		v.resize(2);
 		return true;
-	case Symbol::Li:
-	case Symbol::Na:
-	case Symbol::K:
-	case Symbol::Rb:
-	case Symbol::Cs:
-	case Symbol::Fr:
-	case Symbol::Ag:
+	case phy::Symbol::Li:
+	case phy::Symbol::Na:
+	case phy::Symbol::K:
+	case phy::Symbol::Rb:
+	case phy::Symbol::Cs:
+	case phy::Symbol::Fr:
+	case phy::Symbol::Ag:
 		v.push_back(1);
 		v.resize(1);
 		return true;
@@ -32,16 +32,16 @@ bool genValencias_1(Symbol s,Valencias& v)
 	}
 	return true;
 }
-bool genValencias_2(Symbol s,Valencias& v)
+bool genValencias_2(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{				
-	case Symbol::Be:
-	case Symbol::Mg:
-	case Symbol::Ca:
-	case Symbol::Sr:
-	case Symbol::Ba:
-	case Symbol::Ra:
+	case phy::Symbol::Be:
+	case phy::Symbol::Mg:
+	case phy::Symbol::Ca:
+	case phy::Symbol::Sr:
+	case phy::Symbol::Ba:
+	case phy::Symbol::Ra:
 		v.push_back(2);
 		v.resize(1);
 		return true;		
@@ -49,12 +49,12 @@ bool genValencias_2(Symbol s,Valencias& v)
 		return false;
 	}
 }
-bool genValencias_3(Symbol s,Valencias& v)
+bool genValencias_3(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{				
-	case Symbol::Sc:
-	case Symbol::Y:
+	case phy::Symbol::Sc:
+	case phy::Symbol::Y:
 		v.push_back(3);
 		v.resize(1);
 		return true;		
@@ -62,17 +62,17 @@ bool genValencias_3(Symbol s,Valencias& v)
 		return false;
 	}	
 }
-bool genValencias_4(Symbol s,Valencias& v)
+bool genValencias_4(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{				
-	case Symbol::Ti:
-	case Symbol::Zr:
-	case Symbol::Rf:
+	case phy::Symbol::Ti:
+	case phy::Symbol::Zr:
+	case phy::Symbol::Rf:
 		v.push_back(4);
 		v.resize(1);
 		return true;	
-	case Symbol::Hf:
+	case phy::Symbol::Hf:
 		v.push_back(2);
 		v.push_back(3);
 		v.push_back(4);
@@ -82,20 +82,20 @@ bool genValencias_4(Symbol s,Valencias& v)
 		return false;
 	}	
 }
-bool genValencias_5(Symbol s,Valencias& v)
+bool genValencias_5(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{				
-	case Symbol::V:		
-	case Symbol::Nb:
+	case phy::Symbol::V:		
+	case phy::Symbol::Nb:
 		v.push_back(2);
 		v.push_back(3);
 		v.push_back(4);
 		v.push_back(5);
 		v.resize(4);
 		return true;
-	case Symbol::Ta:
-	case Symbol::Db:
+	case phy::Symbol::Ta:
+	case phy::Symbol::Db:
 		v.push_back(5);
 		v.resize(1);
 		return true;				
@@ -103,17 +103,17 @@ bool genValencias_5(Symbol s,Valencias& v)
 		return false;
 	}	
 }
-bool genValencias_6(Symbol s,Valencias& v)
+bool genValencias_6(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{	
-	case Symbol::Cr:	
+	case phy::Symbol::Cr:	
 		v.push_back(2);
 		v.push_back(3);
 		v.push_back(6);
 		v.resize(3);
 		return true;	
-	case Symbol::Mo:
+	case phy::Symbol::Mo:
 		v.push_back(2);
 		v.push_back(3);
 		v.push_back(4);
@@ -121,7 +121,7 @@ bool genValencias_6(Symbol s,Valencias& v)
 		v.push_back(6);
 		v.resize(5);
 		return true;	
-	case Symbol::W:		
+	case phy::Symbol::W:		
 		v.push_back(4);
 		v.push_back(6);
 		v.resize(2);
@@ -130,11 +130,11 @@ bool genValencias_6(Symbol s,Valencias& v)
 		return false;
 	}	
 }
-bool genValencias_7(Symbol s,Valencias& v)
+bool genValencias_7(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{	
-	case Symbol::Mn:		
+	case phy::Symbol::Mn:		
 		v.push_back(2);
 		v.push_back(3);
 		v.push_back(4);
@@ -142,16 +142,16 @@ bool genValencias_7(Symbol s,Valencias& v)
 		v.push_back(7);
 		v.resize(5);	
 		return true;	
-	case Symbol::Tc:	
+	case phy::Symbol::Tc:	
 		v.push_back(4);	
 		v.push_back(7);
 		v.resize(2);
 		return true;		
-	case Symbol::Re:	
+	case phy::Symbol::Re:	
 		v.push_back(4);
 		v.resize(1);
 		return true;		
-	case Symbol::Bh:	
+	case phy::Symbol::Bh:	
 		v.push_back(7);
 		v.resize(1);
 		return true;			
@@ -159,16 +159,16 @@ bool genValencias_7(Symbol s,Valencias& v)
 		return false;
 	}	
 }
-bool genValencias_8(Symbol s,Valencias& v)
+bool genValencias_8(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{	
-	case Symbol::Fe:
+	case phy::Symbol::Fe:
 		v.push_back(2);
 		v.push_back(3);
 		v.resize(2);
 		return true;	
-	case Symbol::Ru:		
+	case phy::Symbol::Ru:		
 		v.push_back(2);
 		v.push_back(3);
 		v.push_back(4);
@@ -176,159 +176,159 @@ bool genValencias_8(Symbol s,Valencias& v)
 		v.push_back(8);
 		v.resize(5);	
 		return true;	
-	case Symbol::Os:	
+	case phy::Symbol::Os:	
 		v.push_back(4);
 		v.resize(1);
 		return true;
-	case Symbol::Hs:
+	case phy::Symbol::Hs:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_9(Symbol s,Valencias& v)
+bool genValencias_9(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{		
-	case Symbol::Co:
+	case phy::Symbol::Co:
 		v.push_back(2);
 		v.push_back(3);
 		v.resize(2);
 		return true;	
-	case Symbol::Rh:	
+	case phy::Symbol::Rh:	
 		v.push_back(3);
 		v.resize(1);
 		return true;	
-	case Symbol::Ir:	
+	case phy::Symbol::Ir:	
 		v.push_back(3);
 		v.push_back(4);
 		v.resize(2);
 		return true;	
-	case Symbol::Mt:
+	case phy::Symbol::Mt:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_10(Symbol s,Valencias& v)
+bool genValencias_10(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::Ni:
+	case phy::Symbol::Ni:
 		v.push_back(2);
 		v.push_back(3);
 		v.resize(2);
 		return true;	
-	case Symbol::Pd:	
+	case phy::Symbol::Pd:	
 		v.push_back(1);
 		v.push_back(2);
 		v.push_back(4);
 		v.push_back(6);
 		v.resize(4);
 		return true;	
-	case Symbol::Pt:	
+	case phy::Symbol::Pt:	
 		v.push_back(2);
 		v.push_back(4);
 		v.resize(2);
 		return true;
-	case Symbol::Ds:
+	case phy::Symbol::Ds:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_11(Symbol s,Valencias& v)
+bool genValencias_11(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::Cu:	
-	case Symbol::Ag:	
+	case phy::Symbol::Cu:	
+	case phy::Symbol::Ag:	
 		v.push_back(1);
 		v.push_back(2);
 		v.push_back(3);
 		v.push_back(4);
 		v.resize(4);
 		return true;	
-	case Symbol::Au:	
+	case phy::Symbol::Au:	
 		v.push_back(1);
 		v.push_back(3);
 		v.resize(2);
 		return true;
-	case Symbol::Rg:
+	case phy::Symbol::Rg:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_12(Symbol s,Valencias& v)
+bool genValencias_12(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::Cd:	
-	case Symbol::Hg:	
+	case phy::Symbol::Cd:	
+	case phy::Symbol::Hg:	
 		v.push_back(1);
 		v.push_back(2);
 		v.resize(2);
 		return true;	
-	case Symbol::Zn:	
+	case phy::Symbol::Zn:	
 		v.push_back(2	);
 		v.resize(1);
 		return true;
-	case Symbol::Cn:
+	case phy::Symbol::Cn:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_13(Symbol s,Valencias& v)
+bool genValencias_13(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::B:	
-	case Symbol::Al:
-	case Symbol::Ga:
-	case Symbol::In:	
+	case phy::Symbol::B:	
+	case phy::Symbol::Al:
+	case phy::Symbol::Ga:
+	case phy::Symbol::In:	
 		v.push_back(3);
 		v.resize(1);
 		return true;	
-	case Symbol::Ti:	
+	case phy::Symbol::Ti:	
 		v.push_back(3);
 		v.push_back(1);
 		v.resize(2);
 		return true;
-	case Symbol::Nh:
+	case phy::Symbol::Nh:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_14(Symbol s,Valencias& v)
+bool genValencias_14(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::C:	
-	case Symbol::Ge:
-	case Symbol::Sn:
-	case Symbol::Pb:	
+	case phy::Symbol::C:	
+	case phy::Symbol::Ge:
+	case phy::Symbol::Sn:
+	case phy::Symbol::Pb:	
 		v.push_back(2);
 		v.push_back(4);
 		v.resize(2);
 		return true;	
-	case Symbol::Si:	
+	case phy::Symbol::Si:	
 		v.push_back(2);
 		v.resize(1);
 		return true;
-	case Symbol::Fl:
+	case phy::Symbol::Fl:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_15(Symbol s,Valencias& v)
+bool genValencias_15(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::N:		
+	case phy::Symbol::N:		
 		v.push_back(-3);
 		v.push_back(1);
 		v.push_back(2);
@@ -336,104 +336,104 @@ bool genValencias_15(Symbol s,Valencias& v)
 		v.push_back(4);
 		v.resize(5);
 		return true;
-	case Symbol::As:	
-	case Symbol::Sb:
-	case Symbol::Bi:	
+	case phy::Symbol::As:	
+	case phy::Symbol::Sb:
+	case phy::Symbol::Bi:	
 		v.push_back(-3);
 		v.push_back(3);
 		v.push_back(5);
 		v.resize(3);
 		return true;	
-	case Symbol::P:		
+	case phy::Symbol::P:		
 		v.push_back(-3);
 		v.push_back(3);
 		v.push_back(4);
 		v.push_back(5);
 		v.resize(3);
 		return true;
-	case Symbol::Mc:
+	case phy::Symbol::Mc:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_16(Symbol s,Valencias& v)
+bool genValencias_16(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::O:		
+	case phy::Symbol::O:		
 		v.push_back(-2);
 		v.push_back(-1);
 		v.resize(2);
 		return true;
-	case Symbol::S:	
-	case Symbol::Se:
-	case Symbol::Te:	
+	case phy::Symbol::S:	
+	case phy::Symbol::Se:
+	case phy::Symbol::Te:	
 		v.push_back(-2);
 		v.push_back(2);
 		v.push_back(4);
 		v.push_back(6);
 		v.resize(4);
 		return true;	
-	case Symbol::Po:
+	case phy::Symbol::Po:
 		v.push_back(-2);
 		v.push_back(2);
 		v.push_back(4);
 		v.resize(3);
 		return true;
-	case Symbol::Lv:
+	case phy::Symbol::Lv:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool genValencias_17(Symbol s,Valencias& v)
+bool genValencias_17(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::F:		
+	case phy::Symbol::F:		
 		v.push_back(-1);
 		v.resize(1);
 		return true;
-	case Symbol::Cl:	
-	case Symbol::Br:
-	case Symbol::I:	
+	case phy::Symbol::Cl:	
+	case phy::Symbol::Br:
+	case phy::Symbol::I:	
 		v.push_back(-1);
 		v.push_back(1);
 		v.push_back(3);
 		v.push_back(5);
 		v.resize(4);
 		return true;	
-	case Symbol::At:
+	case phy::Symbol::At:
 		v.push_back(-1);
 		v.push_back(1);
 		v.resize(2);
 		return true;
-	case Symbol::Ts:
+	case phy::Symbol::Ts:
 		return true;		
 	default :
 		return false;
 	}	
 }	
-bool genValencias_18(Symbol s,Valencias& v)
+bool genValencias_18(phy::Symbol s,phy::Valencias& v)
 {
 	switch(s)
 	{
-	case Symbol::He:	
-	case Symbol::Ne:	
-	case Symbol::Ar:
-	case Symbol::Kr:
-	case Symbol::Xe:
-	case Symbol::Rn:
+	case phy::Symbol::He:	
+	case phy::Symbol::Ne:	
+	case phy::Symbol::Ar:
+	case phy::Symbol::Kr:
+	case phy::Symbol::Xe:
+	case phy::Symbol::Rn:
 		v.clear();
 		return true;
-	case Symbol::Ts:
+	case phy::Symbol::Ts:
 		return true;		
 	default :
 		return false;
 	}	
 }
-bool Atom::genValencias(Symbol s,Valencias& v)
+bool Atom::genValencias(phy::Symbol s,phy::Valencias& v)
 {
 	if(genValencias_1(s,v)) return true;
 	

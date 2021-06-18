@@ -3,7 +3,7 @@
 #define OCTETOS_CHEMISTRY_ATOM_HH
 
 
-#include <octetos/physical/Atom-Bohr.hh>
+#include <octetos/physical/Atom.hh>
 #include <vector>
 
 
@@ -12,16 +12,16 @@ namespace oct::chem
 {
 
 
-class Atom : public oct::phy::Bohr
+class Atom : public oct::phy::Atom
 {
 public:
 	Atom();
 	Atom(phy::Symbol);
 	Atom(phy::AtomicNumber);
 
-	const phy::Valencias& getValencias()const;
+	//const phy::Valencias& getValencias()const;
 	float getNegativityNumber()const;//escala de pauling
-	const phy::QuantumNumber& getQuantumNumber();
+	//const phy::QuantumNumber& getQuantumNumber();
 
 	void set(phy::Symbol);
 	void set(phy::AtomicNumber);
@@ -38,7 +38,6 @@ public:
 	static float genNegativityNumber(phy::Symbol);
 
 protected:
-	phy::Valencias valencias;
 };
 
 class Table : public std::vector<Atom*>

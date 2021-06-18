@@ -90,14 +90,14 @@ void testDeveloping()
 	oct::chem::NoMetales bNoMetales(tperiodica);
 	CU_ASSERT(bNoMetales.size() == 25);//no confirmado
 	
-	for(oct::chem::Atom* a : tperiodica)
+	/*for(oct::chem::Atom* a : tperiodica)
 	{
 		std::cout << a->getName() << "\n";
 		std::cout << a->getNegativityNumber() << "\n";
 		std::string strQnA = (std::string)(a->getQuantumNumber());
 		std::cout << strQnA << "\n";
 		std::cout << "Valencias : " << a->getValencias().size() << "\n";
-	}
+	}*/
 	oct::chem::Molecule::List lsMolecules;	
 	float negativity = 0.0;
 	for(size_t i = 0; i < bMetales.size(); i++)
@@ -135,25 +135,14 @@ void testDeveloping()
 	}
 	CU_ASSERT(lsMolecules.size() > 0);
 	std::cout << "Total moleculas : " << lsMolecules.size() << "\n";		
-	for(oct::chem::Molecule::Element e : lsMolecules)
+	/*for(oct::chem::Molecule::Element e : lsMolecules)
 	{
 		(*e.second) >> std::cout ;
 		//std::cout << ", tipe :" << m->getBond();
 		std::cout << "\n";
-	}
-	
-	
-	
-	/*unsigned short counCO2 = oct::chem::Molecule::reactionCovalentPolar(atoms[oct::chem::Symbol::C],atoms[oct::chem::Symbol::O],lsMoleculesCO2);
-	std::cout << "Total moleculas CO2 : " << lsMolecules.size() << "\n";
-	if(counCO2>0)
-	{
-		for(oct::chem::Molecule* m : lsMoleculesCO2)
-		{
-			*m >> std::cout ;
-			std::cout << "\n";
-		}
 	}*/
+	
+	
 	
 	for(oct::chem::Molecule::Element e : lsMolecules)
 	{

@@ -434,7 +434,7 @@ bool genValencias_18(phy::Symbol s,phy::Valencias& v)
 	}	
 }
 bool Atom::genValencias(phy::Symbol s,phy::Valencias& v)
-{
+{	
 	if(genValencias_1(s,v)) return true;
 	
 	if(genValencias_2(s,v)) return true;

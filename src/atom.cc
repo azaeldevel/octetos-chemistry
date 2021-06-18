@@ -44,27 +44,20 @@ Atom::Atom()
 {
 	
 }
-Atom::Atom(phy::Symbol s) : oct::phy::Bohr(s)
+Atom::Atom(phy::Symbol s) : oct::phy::Atom(s)
 {
 	Atom::genValencias(phy::Symbol(protonsCount),valencias);
 	Atom::genQuantumNumber(phy::Symbol(protonsCount), qnumber);
 }
-Atom::Atom(phy::AtomicNumber n) : oct::phy::Bohr(n)
+Atom::Atom(phy::AtomicNumber n) : oct::phy::Atom(n)
 {
 	Atom::genValencias(phy::Symbol(protonsCount),valencias);
 	Atom::genQuantumNumber(phy::Symbol(protonsCount), qnumber);
 }
 
 
-const phy::QuantumNumber& Atom::getQuantumNumber()
-{
-	return qnumber;
-}
 
-const phy::Valencias& Atom::getValencias() const
-{	
-	return valencias;
-}
+
 float Atom::getNegativityNumber() const
 {
 	return phy::Symbol(protonsCount) > phy::Symbol::None ? genNegativityNumber(phy::Symbol(protonsCount)) : 0.0;
@@ -72,14 +65,14 @@ float Atom::getNegativityNumber() const
 
 void Atom::set(phy::Symbol s)
 {
-	Bohr::set(s);
-	Atom::genValencias(phy::Symbol(s),valencias);
-	Atom::genQuantumNumber(phy::Symbol(s), qnumber);
+	oct::phy::Atom::set(s);
+	Atom::genValencias(s,Atom::valencias);
+	Atom::genQuantumNumber(s, qnumber);
 }
 void Atom::set(phy::AtomicNumber a)
 {
-	Bohr::set(a);
-	Atom::genValencias(phy::Symbol(a),valencias);
+	oct::phy::Atom::set(a);
+	Atom::genValencias(phy::Symbol(a),Atom::valencias);
 	Atom::genQuantumNumber(phy::Symbol(a), qnumber);
 }
 

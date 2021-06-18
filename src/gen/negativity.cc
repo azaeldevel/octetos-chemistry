@@ -6,6 +6,7 @@
 namespace oct::chem
 {
 //https://www.quimica.es/enciclopedia/Electronegatividad.html
+////https://www.ecured.cu/Reactividad
 float Atom::genNegativityNumber(phy::Symbol s)
 {
 	switch(s)

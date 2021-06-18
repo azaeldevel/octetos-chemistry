@@ -111,12 +111,18 @@ namespace oct::chem
 		unsigned short count = 0;
 		for(phy::valencia vcation : a.getValencias())
 		{
+			std::cout << "Step 1\n";
 			if(vcation > 0)
 			{
+				std::cout << "Step 1.1\n";
 				for(phy::valencia vanion : b.getValencias())
 				{
+					if(vanion < 0)
+					{
+					std::cout << "Step 1.1.1\n";
 					//verificacion de tipo de enlace
-					float diff = std::abs(b.getNegativityNumber() - a.getNegativityNumber());					
+					float diff = std::abs(b.getNegativityNumber() - a.getNegativityNumber());	
+					std::cout << "Step 1.1.2\n";				
 					if(diff < 0.4)
 					{
 						std::string msg = "No se puede realizar un enlace ";
@@ -156,27 +162,30 @@ namespace oct::chem
 						if(bond != Bond::IONIC) throw octetos::core::Exception(msg,__FILE__,__LINE__);					
 					}
 			
-					if(vanion < 0)
-					{						
+					std::cout << "Step 1.1.3\n";					
+											
 						unsigned short avanion = std::abs(vanion);
 						unsigned short div = vcation / abs(vanion);
 						unsigned short module1 = vcation % avanion;
 						unsigned short module2 = avanion % vcation;
 						//bool ox = (b.getSymbol() == Symbol::O and vanion == -1) true : false;
 						List::iterator it;
-						
+						std::cout << "Step 1.1.3.1 '" << a.getSymbol() << "'\n";
 						Molecule* mnew = new Molecule(2);
 						mnew->bond = bond;
+						std::cout << "Step 1.1.3.2\n";
 						if(bond == Bond::COVALENTNOTPOLAR and a.getSymbol() == b.getSymbol())
 						{
+							std::cout << "Step 1.1.3.1.1\n";
 							mnew->at(0).atom = a;
-							mnew->at(0).amount = 2;//TODO: Que pasa con distintas valecias?
+							mnew->at(0).amount = vcation;//TODO: Que pasa con distintas valecias?
 							mnew->resize(1);
 							count++;std::string strmol;
 							(*mnew) >> strmol;
 							it = lsm.find(strmol);
 							if(it == lsm.end())
 							{
+								std::cout << "Step 1.1.3.1.2\n";
 								lsm.insert(Element(strmol,mnew));
 							}
 							else
@@ -186,7 +195,9 @@ namespace oct::chem
 							continue;
 						}
 
+						std::cout << "Step 1.1.3.3\n";
 						mnew->at(0).atom = a;
+						std::cout << "Step 1.1.3.4\n";
 						mnew->at(1).atom = b;
 						if( module1 == 0 and div == 1)
 						{
@@ -213,7 +224,7 @@ namespace oct::chem
 						(*mnew) >> strmol;
 						it = lsm.find(strmol);
 						if(it == lsm.end())
-						{
+						{							
 							lsm.insert(Element(strmol,mnew));
 						}
 						else
@@ -235,6 +246,8 @@ namespace oct::chem
 							lsm.push_back(mnew);
 						}*/
 					}
+					
+					std::cout << "Step 1.1.4\n";
 				}
 			}
 		}
